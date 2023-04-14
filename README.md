@@ -3,7 +3,7 @@
 
 # Sobre o site
 * Fazer o site de apresentação inicialmente sobre a empresa
-*Informações de contato
+* Informações de contato
 * Onde se localiza
 * Apresentação dos socios da empresa
 * FAQ
