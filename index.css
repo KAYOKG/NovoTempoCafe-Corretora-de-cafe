@@ -1,0 +1,330 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+:root{
+  --cor-background: #cccccc;
+  --cor-texto: white;
+  --cor-hover: ;
+  --cor-border: #aaaaaa;
+  --cor-destaque: #ea3b64;
+
+  --fonte-primaria: ;
+  --fonte-secundaria: ;
+  --cor-calcada: #59564d;
+  -red:#eb2251;
+  --green:#10cd71;
+}
+
+/* SECTION - Introdução da Página */
+#section1 {
+  background-color: var(--cor-background);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+#divSloganEmpresa{
+  position: absolute;
+  z-index: 1;
+  top: 2%;
+  left: 2%;
+  background-color: var(--cor-border);
+  width: 48%;
+  height: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  gap: 3px;
+}
+
+#nav{
+  position: fixed;
+  z-index: 1;
+  right: 30px;
+  top: 20px;
+}
+
+summary{
+  list-style: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: var(--cor-destaque);
+  padding: 8px 27px 8px 27px;
+  border-radius: 4px;
+  display: inline-block;
+  user-select: none;
+  width: auto;
+  margin: 0px 0px 0px 0px;
+
+}
+
+summary:hover{
+  background-color: #343434;
+  color: white;
+}
+
+
+ul{
+  background-color: #252525;
+  z-index: 2;
+}
+
+li{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  transition: all 0.4s;
+  width: 102.89px;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column-reverse;
+  align-content: center;
+  margin-top: 5px;
+  align-items: center;
+}
+
+li:hover{
+  font-size: 19px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  cursor: pointer;
+  background-color: var(--cor-border);
+}
+
+li:hover > a{
+  color: var(--cor-destaque);
+}
+
+li:hover > a:hover{
+  color: var(--cor-destaque);
+}
+
+a{
+  text-decoration: none;
+  color: var(--cor-background);
+  margin: 4px 0 4px 0;
+}
+
+#imagemPrincipal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+#nomeEmpresa {
+  font-size: 3em;
+  color: rgb(0, 0, 0);
+}
+
+#slogan {
+  font-size: 1.5em;
+  color: rgb(0, 0, 0);
+}
+/* !SECTION - Introdução da Página */
+
+/* SECTION - Definições gerias nas SECTIONS */
+section{
+  background-color:  #181818;
+}
+
+p{
+  color: white;
+}
+
+h2{
+  color: white;
+  margin-right: 10vh;
+}
+/* !SECTION - Definições geras nas SECTIONS */
+
+/* SECTION - SECTION 2 */
+#section2{
+  width: 100%;
+  height: 150vh;
+  display: flex;
+  align-items: center;
+}
+
+.equipe{ /* NOTE - Texto e foto da equipe */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+#txtEquipe{ /* FIXME - FAZ NADA */
+  margin-right: 16%;
+}
+
+#imagemEquipe{
+  width: 300px;
+  border-radius: 2%;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+}
+
+#divVMO{
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+}
+
+.vmo{ /* NOTE - class VMO = São as div Valores, missão, objetivos */
+  width: 20%;
+  padding: 3%;
+  float: left;
+  box-sizing: border-box;
+  border: 1px solid var(--cor-border);
+  border-radius: 5px;
+  height: 24vh;
+  align-items: center;
+  background-color: #343434;
+  margin-bottom: 10vh;
+  border-color: #343434;
+  font-size: 22px;
+}
+/* !SECTION - SECTION 2 */
+
+/* SECTION - SECTION 3 */
+#section3{
+  width: 100%;
+  height: 1vw;
+  background-color: #181818;
+  border-bottom: 2px solid var(--cor-destaque);
+}
+
+#tableAtividades{
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#tableAtividades td {
+  text-align: center;
+}
+
+#tableAtividades .divAtividades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tableAtividades .divAtividades #elipse {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: var(--cor-destaque);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+  color: var(--cor-destaque);
+}
+
+
+#tableAtividades .divAtividades p:last-of-type {
+  margin-top: 5px;
+}
+
+#elipse{
+  background-color: var(--cor-destaque);
+  color: var(--cor-destaque);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.atv{ /* NOTE - class ATV = São as div Atividades */
+  width: 17%;
+  padding: 3%;
+  float: left;
+  box-sizing: border-box;
+  margin-right: 1%;
+  margin-left: 6%;
+  height: 20vh;
+  align-content: center;
+  padding: 0px;
+  border-radius: 20px;
+}
+
+#fotos{
+  width:100%
+}
+/* !SECTION - SECTION 3 */
+
+/* SECTION - SECTION 4 */
+#section4{
+  width: 100%;
+  height: 75vh;
+  background-color: #ececec;
+}
+
+#table1{
+  background-color: #ffffff;
+  border-radius: 20px;
+  width: 80%;
+  height: 60vh;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 2px solid var(--cor-destaque);
+  transform: translate(0, -10vh);
+  box-shadow: 0px 5px 4px 3px rgba(0, 0, 0, 0.5);
+  margin-top: 600px;
+}
+
+#table1 p{
+  color: black;
+  text-align: center;
+  font-size: 50px;
+  border-bottom: 2px solid var(--cor-destaque);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+#table1 table{
+  width: 97%;
+  height: 85%;
+  border-radius: 20px;
+  margin-top: 1vh;
+  margin-left: 15px;
+}
+
+td{
+  text-align: center;
+  border-bottom: 1px solid var(--cor-border);
+  font-size: 22px;
+}
+/* !SECTION - SECTION 4 */
+
+/* SECTION - SECTION 5 */
+.mapa{
+  width: 1314px;
+  height: 320px;
+  border-radius: 10px;
+}
+
+#local{
+  text-align: center;
+}
+/* !SECTION - SECTION 5 */
+
+/* SECTION - SECTION 6 */
+/* !SECTION - SECTION 6 */
+
+/* SECTION - SECTION 7 */
+/* !SECTION - SECTION 7 */
