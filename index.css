@@ -513,10 +513,24 @@ td{
   text-align: center;
   margin-bottom: 4vh;
 }
+
 .perguntasFrequentes{
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 20px auto;
   width: 64%;
+  list-style: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: var(--cor-destaque);
+  padding: 1vh 27px 1vh 27px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.perguntasFrequentes:hover{
+  background-color: #343434;
+  color: white;
 }
 /* !SECTION - SECTION 8 */
