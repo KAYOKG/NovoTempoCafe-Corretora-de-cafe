@@ -54,3 +54,7 @@
 - Corrigir o texto no site todo
 
 - Ajeitar alinhamento em todas sections vertical e horizontal
+
+- Quando abaixar a tela aparecer o nav la em cima(logo e opção de nav)
+
+- Colocar efeito na fotos estilo quando passa o mouse nos certificados dessa [pagina](https://create.vista.com/pt/templates/certificate/tecnology/)
