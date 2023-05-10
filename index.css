@@ -230,7 +230,6 @@ td{
 }
 
 #rodapePolaroid {
-  color: #333;
   font-size: 1.55vw;
   position: relative;
   top: 0.5vw;
@@ -529,9 +528,6 @@ td{
 }
 
 .perguntasFrequentes{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   margin: 20px auto;
   width: 64%;
   list-style: none;
