@@ -1,6 +1,6 @@
 *{
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 :root{
   --cor-halftone : #cccccc;
@@ -18,19 +18,19 @@
 @media screen and (max-width: 767px) {
 
   #tableCEO td{
-    font-size: 20px !important;
+    font-size: 20px;
   }
   #tableCEO img{
-    width: 140% !important;
+    width: 140%;
   }
   .tablep{
-    font-size: 185% !important;
+    font-size: 185%;
   }
   #divSloganEmpresa h4{
-    font-size: 15px !important;
+    font-size: 15px;
   }
   #divSloganEmpresa{
-    height: 10% !important;
+    height: 10%;
   }
 }
 
@@ -308,7 +308,7 @@ td{
 
 #tableAtividades td {
   text-align: center;
-  border-bottom: 0px;
+  border-bottom: 0;
   width: 15vw;
 }
 
@@ -343,7 +343,6 @@ td{
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: red;
 }
 
 .atv{ /* NOTE - class ATV = São as div Atividades */
@@ -355,7 +354,6 @@ td{
   margin-left: 6%;
   height: 20vh;
   align-content: center;
-  padding: 0px;
   border-radius: 20px;
 }
 
@@ -378,7 +376,7 @@ td{
   height: 60%;
   border-bottom: 2px solid var(--cor-destaque);
   transform: translate(0, -10vh);
-  box-shadow: 0px 5px 4px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 4px 3px rgba(0, 0, 0, 0.5);
 }
 
 #table1 h2{
@@ -386,7 +384,7 @@ td{
   text-align: center;
   font-size: 190%;
   border-bottom: 2px solid var(--cor-destaque);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 #table1 td{
   font-size: 140%;
@@ -424,7 +422,6 @@ td{
   display: inline-block;
   user-select: none;
   width: auto;
-  margin: 0px 0px 0px 0px;
 }
 
 #menu:hover{
@@ -458,7 +455,6 @@ td{
   align-items: baseline;
   flex-direction: column;
   margin-top: 5px;
-  align-items: center;
   align-content: center;
   flex-wrap: wrap;
 }
@@ -488,12 +484,10 @@ td{
   color: white;
 }
 #tableCEO{
-  background-color: white;
   color: white;
   width: 75%;
   margin: 0 auto;
-  background-color: transparent; 
-  color: rgb(255, 255, 255);
+  background-color: transparent;
   border-spacing: 50px;
   border-radius: 10px;
 }
@@ -502,7 +496,7 @@ td{
   width: 90%;
 }
 #tableCEO td{
-  border-bottom: 0px;
+  border-bottom: 0;
   font-size: 2vw;
 }
 #tableDescription1{
@@ -550,7 +544,7 @@ footer{
   background-color: var(--cor-destaque);
   color: white;
   text-align: center;
-  padding: 2vh 0px 2vh 0px;
+  padding: 2vh 0 2vh 0;
   font-size: 1.5vw;
   height: 7vh;
   display: flex;
