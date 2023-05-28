@@ -80,4 +80,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-// !SECTION - PERGUNTAS FREQUENTES
+// !SECTION - PERGUNTAS FREQUENTES`
+
+// Adiciona um listener para o evento de rolagem da página
+// window.addEventListener('scroll', function() {
+//   // Verifica se a página foi rolada
+//   if (window.scrollY > 0) {
+//     // Calcula a posição atual da página
+//     var currentPosition = window.scrollY;
+//     // Calcula a posição final da página
+//     var targetPosition = 0;
+//     // Calcula a distância que a página precisa percorrer
+//     var distance = currentPosition - targetPosition;
+//     // Calcula a velocidade da animação
+//     var speed = 10;
+//     // Calcula o número de quadros necessários para a animação
+//     var frames = distance / speed;
+//     // Inicia a animação
+//     var i = 0;
+//     var interval = setInterval(function() {
+//       // Calcula a nova posição da página
+//       var newPosition = currentPosition - (distance / frames) * i;
+//       // Move a página para a nova posição
+//       window.scrollTo(0, newPosition);
+//       // Verifica se a animação terminou
+//       if (i >= frames) {
+//         clearInterval(interval);
+//       }
+//       // Incrementa o contador de quadros
+//       i++;
+//     }, speed);
+//   }
+// });
+
+const scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 200
+});
