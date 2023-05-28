@@ -7,9 +7,8 @@
     <title>Novo Tempo Café</title>
     <link rel="icon" href="images/icone.svg">
     <link rel="stylesheet" href="css/index.css">
-    <script defer type="module" src="js/index.js"></script>
-    <script  src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
-
+    <script defer src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
     <script>
       function loading() {
         document.getElementsByClassName("preLoad")[0].style.display = "none";
@@ -71,7 +70,7 @@
       </div>
     </div>
     <main class="pagina"> <!-- SECTION - Corpo Principal da pagina -->
-      <section id="section1"> <!-- ANCHOR -  Parte 1 da pagina -->
+      <section id="section1"> <!-- SECTION - Parte 1 da pagina -->
         <header> <!-- SECTION - Cabeçalho da pagina -->
           <div id="divSloganEmpresa">
             <h4>CORRETORA DE CAFÉ • ASSESSORIA RURAL • SUPORTE PARA EXPORTAÇÃO DE CAFÉ</h4>
@@ -85,8 +84,8 @@
               </ul>
           </nav>
         </header> <!-- !SECTION - Cabeçalho da pagina -->
-          <img id="imagemPrincipal" src="images/imagemPrincipal.svg" alt="Fotos da empresa">
-        </section>
+        <img class="imagemPrincipal" id="myImage" src="images/imagemPrincipal.svg" alt="Fotos da empresa">
+        </section> <!-- !SECTION - Parte 1 da pagina -->
 
         <section id="section2"> <!-- SECTION - Parte 2 da pagina -->
           <div id="divSection2">
@@ -158,11 +157,11 @@
             </div>
           </div>
 
-          <div class="container">
-            <img class="imagens" src="" alt="imagem">
-            <img class="imagens" src="" alt="imagem">
-            <img class="imagens" src="" alt="imagem">
-            <img class="imagens" src="" alt="imagem">
+          <div class="fotos">
+            <img class="imagens" src="images/instagramPosts/foto1.jpg" alt="imagem">
+            <img class="imagens" src="images/instagramPosts/foto2.jpg" alt="imagem">
+            <img class="imagens" src="images/instagramPosts/foto3.jpg" alt="imagem">
+            <img class="imagens" src="images/instagramPosts/foto4.jpg" alt="imagem">
           </div>
 
         </section> <!-- !SECTION - Parte 3 da pagina -->
@@ -280,15 +279,25 @@
         <footer> <!-- SECTION - Rodapé da pagina-->
           <div id="conteudoFooter">
             <div id="div1">
-              <img src="images/logo Novo Tempo Cafe.svg">
+              <img src="images/logoNovoTempoCafe.svg">
               <ul>
                 <li>
-                  <a href="#section1">Inicio</a>
+                  <div class="link">
+                    <a class="hover-text" href="#section1">Inicio</a>
+                    <div class="hover-underline"></div>
+                  </div>
                 </li>•
                 <li>
-                  <a href="html/sobreNos.html">Sobre Nós</a>
+                  <div class="link">
+                    <a class="hover-text" href="html/sobreNos.html">Sobre Nós</a>
+                    <div class="hover-underline"></div>
+                  </div>
                 </li>•
-                <li><a href="html/contato.html">Contato</a>
+                <li>
+                  <div class="link">
+                    <a class="hover-text" href="html/contato.html">Contato</a>
+                    <div class="hover-underline"></div>
+                  </div>
                 </li>
               </ul>
               <p id="nomeEmpresaFooter">Novo Tempo Café © 2013</p>
@@ -296,11 +305,15 @@
             <div id="div2">
               <div class="subDiv2">
                 <img src="images/icons/map.svg" alt="icons">
-                <p>Av. Felipe Nacif, 34 - 2° Andar<br>Manhuaçu, Minas Gerais, Brasil</p>
+                <div class="link">
+                  <p class="hover-text"><a href="https://www.google.com/maps/dir//NOVO+TEMPO+CAF%C3%89+LTDA+-+Av.+Felipe+Nacif,+34+-+2%C2%B0+Andar,+Sl+101+-+Baixada,+Manhua%C3%A7u+-+MG,+36902-057/@-20.2470207,-42.030716,19.08z/data=!4m17!1m7!3m6!1s0xbafd94d9cba065:0x33a09c429ac198e9!2sNOVO+TEMPO+CAF%C3%89+LTDA!8m2!3d-20.2469002!4d-42.0305137!16s%2Fg%2F11kbm16n6r!4m8!1m0!1m5!1m1!1s0xbafd94d9cba065:0x33a09c429ac198e9!2m2!1d-42.0305137!2d-20.2469002!3e1?hl=pt-BR&entry=ttu" target="_blank"
+                    rel="noreferrer">Av. Felipe Nacif, 34 - 2° Andar<br>Manhuaçu, Minas Gerais, Brasil</a></p>
+                    <div class="hover-underline"></div>
+                </div>
               </div>
               <div class="subDiv2">
                 <img src="images/icons/call.svg" alt="icons">
-                <p>+55 (33) 3331-4530</p>
+                  <p>+55 (33) 3331-4530</p>
               </div>
               <div class="subDiv2">
                 <img src="images/icons/email.svg" alt="icons">
@@ -314,16 +327,23 @@
               </div>
               <div id="sub2Div3">
                 <a href="https://www.instagram.com/novotempocafe/" target="_blank" rel="noreferrer">
-                  <img src="images/icons/instagram.svg" alt="Icon Instagram">
+                  <img id="insta" src="images/icons/instagram.svg" alt="Icon Instagram">
                 </a>
-                <p>@novotempocafe</p>
+                <div class="link">
+                  <p class="hover-text"><a href="https://www.instagram.com/novotempocafe/" target="_blank" rel="noreferrer">@novotempocafe</a></p>
+                  <div class="hover-underline"></div>
+                </div>
+
               </div>
             </div>
           </div>
           <div id="desenvolvedor">
-            <p>Feito por
-              <a href="https://github.com/Venidici-Org" target="_blank" rel="noreferrer">Venidici</a>
-            </p>
+            <p>Feito por</p>
+            <div class="link">
+              <p class="hover-text"><a href="https://github.com/Venidici-Org" target="_blank"
+                  rel="noreferrer">Venidici</a></p>
+                  <div class="hover-underline"></div>
+            </div>
           </div>
         </footer> <!-- !SECTION - Rodapé da pagina -->
 

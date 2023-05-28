@@ -214,12 +214,12 @@ main{
 
 @keyframes liquid {
   0% {
-    height: 0px;
+    height: 0;
     opacity: 1;
   }
 
   5% {
-    height: 0px;
+    height: 0;
     opacity: 1;
   }
 
@@ -504,6 +504,10 @@ main{
 
 /* SECTION - Introdução da Página */
 
+#section1{
+  position: relative;
+}
+
 #divSloganEmpresa{
   position: absolute;
   z-index: 1;
@@ -602,11 +606,28 @@ main{
   top: -0.4375rem;
 }
 
-#imagemPrincipal {
+.imagemPrincipal {
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 1;
+}
+
+#myImage {
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+}
+
+#myImage.zoomed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 200%;
+  height: auto;
+  cursor: zoom-out;
+  display: none;
 }
 
 #nomeEmpresa {
@@ -804,15 +825,14 @@ td{
   border-radius: 50%;
 }
 
-#instafeed {
+.fotos{
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-#instafeed img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
+.imagens{
+  width: 20vw;
+  border-radius: 1vw;
 }
 
 /* !SECTION - SECTION 3 */
@@ -927,8 +947,9 @@ td{
   flex-direction: column;
   align-items: center;
   border-radius: 0 0 4.5vw 4.5vw;
-  height: 160vh;
+  height: 170vh;
   position: relative;
+  gap: 5vw;
 }
 
 #txtPergunte{
@@ -1077,10 +1098,6 @@ footer a{
   text-decoration: none;
 }
 
-footer a:hover{
-  border-radius: 1px;
-  outline: none;
-}
 
 #conteudoFooter{
   display: flex;
@@ -1102,6 +1119,7 @@ footer a:hover{
   display: flex;
   gap: 0.5vw;
   list-style: none;
+  user-select: none;
 }
 
 #nomeEmpresaFooter{
@@ -1123,7 +1141,6 @@ footer a:hover{
 
 .subDiv2 img{
   width: 2vw;
-  fill: #41bdad;
 }
 
 #div3{
@@ -1168,12 +1185,38 @@ footer a:hover{
   background-image: linear-gradient(45deg, #D62976, #FA7E1E);
 }
 
+
 #desenvolvedor{
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 0 1vw 1vh 0;
   font-family: var(--fonte-secundaria);
+  gap: 0.5vw;
 }
 
+.link {
+  position: relative;
+}
 
+.hover-text {
+  padding: 5px 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.hover-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transition: all 0.2s linear;
+}
+
+.hover-text:hover~.hover-underline{
+  transform: scaleX(1);
+}
 /* !SECTION - Footer */

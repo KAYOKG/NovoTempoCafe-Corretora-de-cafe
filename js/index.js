@@ -1,3 +1,4 @@
+// ANCHOR - Função do Menu da pagina
 const nav = document.querySelector(".nav");
 const btnMenu = document.querySelector(".btn-menu");
 const menu = document.querySelector(".menu");
@@ -31,30 +32,8 @@ function handleClickOutside(targetElement, callback) {
 
 btnMenu.addEventListener("click", handleButtonClick);
 btnMenu.addEventListener("touchstart", handleButtonClick);
-// imagens
 
-const imagens = document.querySelectorAll(".imagens");
-
-const instagramPosts = [
-  "https://www.instagram.com/p/ClQ95sQrAjd/",
-  "https://www.instagram.com/p/ClHkoL8Lsct/",
-  "https://www.instagram.com/p/ClHkUXfLIrl/",
-  "https://www.instagram.com/p/ClDrHHjOh2F/",
-  "https://www.instagram.com/p/ClDqkuaOCq6/",
-  "https://www.instagram.com/p/ClDqHjROwJa/",
-  "https://www.instagram.com/p/ClDpsO_uXoN/",
-  "https://www.instagram.com/p/ClDolerO7dO/",
-];
-
-const imageDurations = [4000, 6000, 8000, 10000];
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
+// NOTE - Função de animação do accordion
 function startSlideshow() {
   shuffleArray(instagramPosts);
 
@@ -69,7 +48,7 @@ function startSlideshow() {
   });
 }
 
-// SECTION - PERGUNTAS FREQUENTES
+// NOTE - PERGUNTAS FREQUENTES
 document.addEventListener('DOMContentLoaded', function () {
   const accordionHeaders = document.querySelectorAll('.accordion-header');
 
@@ -80,39 +59,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-// !SECTION - PERGUNTAS FREQUENTES`
 
-// Adiciona um listener para o evento de rolagem da página
-// window.addEventListener('scroll', function() {
-//   // Verifica se a página foi rolada
-//   if (window.scrollY > 0) {
-//     // Calcula a posição atual da página
-//     var currentPosition = window.scrollY;
-//     // Calcula a posição final da página
-//     var targetPosition = 0;
-//     // Calcula a distância que a página precisa percorrer
-//     var distance = currentPosition - targetPosition;
-//     // Calcula a velocidade da animação
-//     var speed = 10;
-//     // Calcula o número de quadros necessários para a animação
-//     var frames = distance / speed;
-//     // Inicia a animação
-//     var i = 0;
-//     var interval = setInterval(function() {
-//       // Calcula a nova posição da página
-//       var newPosition = currentPosition - (distance / frames) * i;
-//       // Move a página para a nova posição
-//       window.scrollTo(0, newPosition);
-//       // Verifica se a animação terminou
-//       if (i >= frames) {
-//         clearInterval(interval);
-//       }
-//       // Incrementa o contador de quadros
-//       i++;
-//     }, speed);
-//   }
-// });
-
+// ANCHOR - Biblioteca de suavização do Scroll (smooth-scroll@16.1.3)
 const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 200
 });
+
+
+// var image = document.getElementById("myImage");
+// var zoom = 1;
+// var timer;
+
+// window.addEventListener("scroll", function () {
+//   clearTimeout(timer);
+//   timer = setTimeout(function () {
+//     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     var imageTop = image.getBoundingClientRect().top + scrollTop;
+//     var windowHeight = window.innerHeight;
+//     var imageHeight = image.offsetHeight;
+
+//     if (imageTop < scrollTop + windowHeight / 2 && imageTop + imageHeight > scrollTop + windowHeight / 2) {
+//       var zoomLevel = (scrollTop + windowHeight / 2 - imageTop) / (imageHeight / 2);
+//       zoom = 1 + zoomLevel;
+//       image.style.position = "fixed";
+//       image.style.top = "50%";
+//       image.style.left = "50%";
+//       image.style.transform = "translate(-50%, -50%) scale(" + zoom + ")";
+//     } else {
+//       image.style.position = "static";
+//       image.style.transform = "none";
+//     }
+//   }, 50);
+// });
