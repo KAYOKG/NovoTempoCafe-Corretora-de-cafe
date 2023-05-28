@@ -36,6 +36,7 @@
 
 main{
   display: none;
+  position: relative;
 }
 
 /* SECTION - PRE LOADER DA PAGINA */
@@ -926,8 +927,8 @@ td{
   flex-direction: column;
   align-items: center;
   border-radius: 0 0 7vw 7vw;
-  z-index: 1;
   height: 160vh;
+  position: relative;
 }
 
 #txtPergunte{
@@ -1056,16 +1057,19 @@ td{
 
 /* SECTION - Footer */
 footer{
-  z-index: 0;
+  z-index: -1;
   background-color: var(--cor-destaque);
   color: white;
   text-align: center;
   padding: 2vh 0 2vh 0;
   font-size: 1.5vw;
-  height: 7vh;
+  height: 100vh;
+  width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  position: absolute;
+  bottom: 1vh;
 }
 
 footer a{
