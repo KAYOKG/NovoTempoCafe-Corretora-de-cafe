@@ -825,16 +825,29 @@ td{
   border-radius: 50%;
 }
 
-.fotos{
-  display: flex;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 22vw);
+  grid-gap: 1vw;
   justify-content: space-evenly;
 }
 
-.imagens{
-  width: 20vw;
-  border-radius: 1vw;
+.grid-item {
+  border: 0.1vw solid #ccc;
+  overflow: hidden;
+  width: 22vw;
+  height: 30vh;
+  background-color: var(--cor-elements-background-light);
+  border-radius: 0.5vw;
 }
 
+.imagens {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 1vw;
+  border-color: #000;
+}
 /* !SECTION - SECTION 3 */
 
 /* SECTION - SECTION 4 */
@@ -1193,6 +1206,10 @@ footer a{
   padding: 0 1vw 1vh 0;
   font-family: var(--fonte-secundaria);
   gap: 0.5vw;
+}
+
+#desenvolvedor img{
+  width: 2vw;
 }
 
 .link {

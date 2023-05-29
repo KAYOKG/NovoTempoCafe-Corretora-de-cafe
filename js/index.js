@@ -91,3 +91,43 @@ const scroll = new SmoothScroll('a[href*="#"]', {
 //     }
 //   }, 50);
 // });
+var images = [
+  "foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpeg",
+  "foto5.jpeg", "foto6.jpeg", "foto7.jpeg", "foto8.jpeg",
+  "foto9.jpeg", "foto10.jpeg", "foto11.jpeg", "foto12.jpeg",
+  "foto13.jpeg", "foto14.jpeg", "foto15.jpeg", "foto16.jpeg",
+  "foto17.jpeg", "foto18.jpeg", "foto19.jpeg", "foto20.jpeg",
+  "foto21.jpeg", "foto22.jpeg", "foto23.jpeg", "foto24.jpeg",
+  "foto25.jpeg", "foto26.jpeg", "foto27.jpeg", "foto28.jpeg",
+  "foto29.jpeg", "foto30.jpeg", "foto31.jpeg", "foto32.jpeg",
+  "foto33.jpeg", "foto34.jpeg", "foto35.jpeg", "foto36.jpeg",
+  "foto37.jpeg", "foto38.jpeg", "foto39.jpeg", "foto40.jpeg",
+  "foto41.jpeg", "foto42.jpeg",
+];
+var intervals = [2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000];
+
+function startSlideshow() {
+  intervalId = setInterval(function () {
+    var imagens = document.querySelectorAll(".grid-item .imagens");
+    for (var i = 0; i < imagens.length; i++) {
+      var randomIndex = Math.floor(Math.random() * images.length);
+      var randomImage = "images/instagramPosts/" + images[randomIndex];
+      imagens[i].src = randomImage;
+      setTimeout((function (index) {
+        return function () {
+          var randomIndex = Math.floor(Math.random() * images.length);
+          var randomImage = "images/instagramPosts/" + images[randomIndex];
+          imagens[index].src = randomImage;
+        }
+      })(i), intervals[i]);
+    }
+  }, 12000);
+}
+
+
+
+function stopSlideshow() {
+  clearInterval(intervalId);
+}
+
+startSlideshow();
