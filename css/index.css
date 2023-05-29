@@ -49,7 +49,7 @@ main{
 }
 
 .container {
-  width: 300px;
+  width: 19.5vw;
   height: 280px;
   position: relative;
   top: 20vh;
@@ -59,7 +59,7 @@ main{
   position: relative;
   width: 15%;
   z-index: 2;
-  left: 8.5vw;
+  left: 44%;
   top: 25vh;
 }
 
@@ -652,6 +652,7 @@ section{
   height: 110vh;
   font-family: var(--fonte-primaria);
   background: url(/images/background.svg);
+  object-fit: contain;
 }
 
 a{
