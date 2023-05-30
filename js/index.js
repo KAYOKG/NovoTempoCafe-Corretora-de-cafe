@@ -1,35 +1,3 @@
-// NOTE - Função de animação do accordion
-function startSlideshow() {
-  shuffleArray(instagramPosts);
-
-  imagens.forEach((img, index) => {
-    img.src = instagramPosts[index];
-    setTimeout(() => {
-      img.classList.add("active");
-      setInterval(() => {
-        img.classList.toggle("active");
-      }, imageDurations[index] * 2);
-    }, imageDurations[index]);
-  });
-}
-
-// NOTE - PERGUNTAS FREQUENTES
-document.addEventListener('DOMContentLoaded', function () {
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', function () {
-      const accordionItem = header.parentElement;
-      accordionItem.classList.toggle('open');
-    });
-  });
-});
-
-// ANCHOR - Biblioteca de suavização do Scroll (smooth-scroll@16.1.3)
-const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 200
-});
-
 //ANCHOR - Função do carrosel de imagens
 var images = [
   "foto1.svg", "foto2.svg", "foto3.svg", "foto4.svg",
@@ -62,9 +30,26 @@ function startSlideshow() {
     }
   }, 18000);
 }
-
+// STUB - Melhorar o carrosel de imagens
 function stopSlideshow() {
   clearInterval(intervalId);
 }
 
 startSlideshow();
+
+// NOTE - PERGUNTAS FREQUENTES
+document.addEventListener('DOMContentLoaded', function () {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function () {
+      const accordionItem = header.parentElement;
+      accordionItem.classList.toggle('open');
+    });
+  });
+});
+
+// ANCHOR - Biblioteca de suavização do Scroll (smooth-scroll@16.1.3)
+const scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 200
+});
