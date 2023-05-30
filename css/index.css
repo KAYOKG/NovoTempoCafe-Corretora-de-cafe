@@ -4,7 +4,7 @@
 }
 :root{
   --cor-halftone : #cccccc;
-  --cor-text-dark: var(--cor-text-dark);
+  --cor-text-dark: #000000;
   --cor-text-light: #ffffff;
   --cor-elements-background-light: #aaaaaa;
   --cor-elements-background-dark: #343434;
@@ -55,7 +55,7 @@
   width: 15%;
   z-index: 2;
   left: 44%;
-  top: 25vh;
+  top: 69.5%;
 }
 
 .coffee-header {
@@ -537,6 +537,55 @@ td{
 /* !SECTION - Definições gerais nas SECTIONS */
 
 /* SECTION - Introdução da Página */
+nav {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #23232e;
+  height: 8vh;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+nav .logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
 
 .imagemPrincipal {
   object-fit: cover;
@@ -1100,7 +1149,7 @@ footer a{
   border-radius: 0.52vw;
 }
 
-#sub2Div3 img:hover{
+#sub2Div3:hover img{
   background-image: linear-gradient(45deg, #D62976, #FA7E1E);
 }
 
