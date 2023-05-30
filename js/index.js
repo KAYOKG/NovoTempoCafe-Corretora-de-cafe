@@ -1,38 +1,3 @@
-// ANCHOR - Função do Menu da pagina
-const nav = document.querySelector(".nav");
-const btnMenu = document.querySelector(".btn-menu");
-const menu = document.querySelector(".menu");
-
-function handleButtonClick(event) {
-  if (event.type === "touchstart") event.preventDefault();
-  event.stopPropagation();
-  nav.classList.toggle("active");
-  handleClickOutside(menu, () => {
-    nav.classList.remove("active");
-  });
-  setAria();
-}
-
-function handleClickOutside(targetElement, callback) {
-  const html = document.documentElement;
-  function handleHTMLClick(event) {
-    if (!targetElement.contains(event.target)) {
-      targetElement.removeAttribute("data-target");
-      html.removeEventListener("click", handleHTMLClick);
-      html.removeEventListener("touchstart", handleHTMLClick);
-      callback();
-    }
-  }
-  if (!targetElement.hasAttribute("data-target")) {
-    html.addEventListener("click", handleHTMLClick);
-    html.addEventListener("touchstart", handleHTMLClick);
-    targetElement.setAttribute("data-target", "");
-  }
-}
-
-btnMenu.addEventListener("click", handleButtonClick);
-btnMenu.addEventListener("touchstart", handleButtonClick);
-
 // NOTE - Função de animação do accordion
 function startSlideshow() {
   shuffleArray(instagramPosts);
@@ -65,46 +30,20 @@ const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 200
 });
 
-
-// var image = document.getElementById("myImage");
-// var zoom = 1;
-// var timer;
-
-// window.addEventListener("scroll", function () {
-//   clearTimeout(timer);
-//   timer = setTimeout(function () {
-//     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//     var imageTop = image.getBoundingClientRect().top + scrollTop;
-//     var windowHeight = window.innerHeight;
-//     var imageHeight = image.offsetHeight;
-
-//     if (imageTop < scrollTop + windowHeight / 2 && imageTop + imageHeight > scrollTop + windowHeight / 2) {
-//       var zoomLevel = (scrollTop + windowHeight / 2 - imageTop) / (imageHeight / 2);
-//       zoom = 1 + zoomLevel;
-//       image.style.position = "fixed";
-//       image.style.top = "50%";
-//       image.style.left = "50%";
-//       image.style.transform = "translate(-50%, -50%) scale(" + zoom + ")";
-//     } else {
-//       image.style.position = "static";
-//       image.style.transform = "none";
-//     }
-//   }, 50);
-// });
+//ANCHOR - Função do carrosel de imagens
 var images = [
-  "foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpeg",
-  "foto5.jpeg", "foto6.jpeg", "foto7.jpeg", "foto8.jpeg",
-  "foto9.jpeg", "foto10.jpeg", "foto11.jpeg", "foto12.jpeg",
-  "foto13.jpeg", "foto14.jpeg", "foto15.jpeg", "foto16.jpeg",
-  "foto17.jpeg", "foto18.jpeg", "foto19.jpeg", "foto20.jpeg",
-  "foto21.jpeg", "foto22.jpeg", "foto23.jpeg", "foto24.jpeg",
-  "foto25.jpeg", "foto26.jpeg", "foto27.jpeg", "foto28.jpeg",
-  "foto29.jpeg", "foto30.jpeg", "foto31.jpeg", "foto32.jpeg",
-  "foto33.jpeg", "foto34.jpeg", "foto35.jpeg", "foto36.jpeg",
-  "foto37.jpeg", "foto38.jpeg", "foto39.jpeg", "foto40.jpeg",
-  "foto41.jpeg", "foto42.jpeg",
+  "foto1.svg", "foto2.svg", "foto3.svg", "foto4.svg",
+  "foto5.svg", "foto6.svg", "foto7.svg", "foto8.svg",
+  "foto9.svg", "foto10.svg", "foto11.svg", "foto12.svg",
+  "foto13.svg", "foto14.svg", "foto15.svg", "foto16.svg",
+  "foto17.svg", "foto18.svg", "foto19.svg", "foto20.svg",
+  "foto21.svg", "foto22.svg", "foto23.svg", "foto24.svg",
+  "foto25.svg", "foto26.svg", "foto27.svg", "foto28.svg",
+  "foto29.svg", "foto30.svg", "foto31.svg", "foto32.svg",
+  "foto33.svg", "foto34.svg", "foto35.svg", "foto36.svg",
+  "foto37.svg", "foto38.svg", "foto39.svg"
 ];
-var intervals = [2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000];
+var intervals = [2000, 4000, 6000, 8000, 10000, 12000, 14000, 16000];
 
 function startSlideshow() {
   intervalId = setInterval(function () {
@@ -121,10 +60,8 @@ function startSlideshow() {
         }
       })(i), intervals[i]);
     }
-  }, 12000);
+  }, 18000);
 }
-
-
 
 function stopSlideshow() {
   clearInterval(intervalId);

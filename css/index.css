@@ -4,7 +4,7 @@
 }
 :root{
   --cor-halftone : #cccccc;
-  --cor-text-dark: #000000;
+  --cor-text-dark: var(--cor-text-dark);
   --cor-text-light: #ffffff;
   --cor-elements-background-light: #aaaaaa;
   --cor-elements-background-dark: #343434;
@@ -32,11 +32,6 @@
   #divSloganEmpresa{
     height: 10%;
   }
-}
-
-main{
-  display: none;
-  position: relative;
 }
 
 /* SECTION - PRE LOADER DA PAGINA */
@@ -197,7 +192,7 @@ main{
   position: absolute;
   bottom: 0;
   left: calc(50% - 40px);
-  background-color: #FFF;
+  background-color: var(--cor-text-light);
   border-radius: 0 0 70px 70px / 0 0 110px 110px;
 }
 
@@ -208,7 +203,7 @@ main{
   position: absolute;
   top: 6px;
   right: -13px;
-  border: 5px solid #FFF;
+  border: 5px solid var(--cor-text-light);
   border-radius: 50%;
 }
 
@@ -347,7 +342,7 @@ main{
   position: absolute;
   bottom: -25px;
   left: -8px;
-  background-color: #000;
+  background-color: var(--cor-text-dark);
 }
 
 .loader{
@@ -365,7 +360,7 @@ main{
 }
 
 .c {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 0.2s;
@@ -374,7 +369,7 @@ main{
 }
 
 .a1 {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 0.4s;
@@ -383,7 +378,7 @@ main{
 }
 
 .r1 {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 0.6s;
@@ -392,7 +387,7 @@ main{
 }
 
 .r2 {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 0.8s;
@@ -401,7 +396,7 @@ main{
 }
 
 .e {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 1s;
@@ -410,7 +405,7 @@ main{
 }
 
 .g {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 1.2s;
@@ -419,7 +414,7 @@ main{
 }
 
 .a2 {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 1.4s;
@@ -428,7 +423,7 @@ main{
 }
 
 .n {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 1.6s;
@@ -436,7 +431,7 @@ main{
   text-shadow: 2px 2px 3px #919191;
 }
 .d {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 1.8s;
@@ -444,7 +439,7 @@ main{
   text-shadow: 2px 2px 3px #919191;
 }
 .o {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 2s;
@@ -453,7 +448,7 @@ main{
 }
 
 .d1 {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 2.2s;
@@ -462,7 +457,7 @@ main{
 }
 
 .d2 {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 2.4s;
@@ -471,7 +466,7 @@ main{
 }
 
 .d3 {
-  color: black;
+  color: var(--cor-text-dark);
   opacity: 0;
   animation: pass 2s ease-in-out infinite;
   animation-delay: 2.6s;
@@ -502,132 +497,58 @@ main{
 }
 /*!SECTION - PRE LOADER DA PAGINA */
 
-/* SECTION - Introdução da Página */
+/* SECTION - Definições gerais na pagina */
+body{
+  /* background-color: var(--cor-destaque); */
+  /* background: url(/images/background.svg); */
+}
 
-#section1{
+main {
+  display: none;
   position: relative;
 }
 
-#divSloganEmpresa{
-  position: absolute;
-  z-index: 1;
-  top: 2vh;
-  left: 2%;
-  background-color: var(--cor-elements-background-light);
-  width: 47.5vw;
-  height: 5.5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1vh;
-}
-
-#divSloganEmpresa h4{
-  font-size: 1vw;
-}
-
-.nav{
-  position: fixed;
-  z-index: 1;
-  right: 4vh;
-  top: 1vw;
-}
-
-.btn-menu {
-  background: none;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--white);
-  padding: 0.5rem;
-  cursor: pointer;
-  background: var(--cor-destaque);
-  border-radius: 10%;
-  font-size: large;
-}
-
-.menu {
-  display: block;
-  position: absolute;
-  top: 4.6875rem;
-  left: 0;
-  background: var(--royal-blue-light);
-  text-align: center;
-  height: 0;
-  z-index: 1;
-  visibility: hidden;
-  overflow-y: hidden;
-  transition: 0.5s;
-}
-
-.menu a {
-  padding: 1rem 0;
-  margin-inline: 1rem;
-  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.16);
-  border-radius: 0;
-}
-
-.icone {
-  border-top: 0.125rem solid;
-  width: 1.25rem;
-}
-
-.icone::after,
-.icone::before {
-  content: " ";
-  display: block;
-  width: 1.25rem;
-  height: 1.6px;
-  background: currentColor;
-  margin-top: 0.3125rem;
-  position: relative;
-  transition: 0.5s;
-}
-
-.nav.active .menu {
-  width: auto;
-  height: auto;
-  visibility: visible;
-  overflow-y: auto;
-}
-
-.nav.active .icone {
-  border-top-color: transparent;
-}
-
-.nav.active .icone::before {
-  transform: rotate(135deg);
-}
-
-.nav.active .icone::after {
-  transform: rotate(-135deg);
-  top: -0.4375rem;
-}
-
-.imagemPrincipal {
+section{
+  background-color:  var(--cor-sections-background);
   width: 100%;
   height: 100%;
+  font-family: var(--fonte-primaria);
+  /* background: url(/images/background.svg); */
+  object-fit: cover;
+  color: var(--cor-text-light);
+}
+
+a{
+  text-decoration: none;
+}
+
+p{
+  color: var(--cor-text-light);
+}
+
+h2{
+  color: var(--cor-text-light);
+}
+
+td{
+  text-align: center;
+  font-size: 22px;
+}
+/* !SECTION - Definições gerais nas SECTIONS */
+
+/* SECTION - Introdução da Página */
+
+.imagemPrincipal {
   object-fit: cover;
   z-index: 1;
+  height: auto;
+  margin-bottom: 30vh;
 }
 
 #myImage {
   width: 100%;
   height: auto;
-  cursor: zoom-in;
-}
 
-#myImage.zoomed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 200%;
-  height: auto;
-  cursor: zoom-out;
-  display: none;
 }
 
 #nomeEmpresa {
@@ -641,43 +562,23 @@ main{
 }
 /* !SECTION - Introdução da Página */
 
-/* SECTION - Definições gerais nas SECTIONS */
-body{
-  /* background-color: var(--cor-destaque); */
-  /* background: url(/images/background.svg); */
-}
-section{
-  /* background-color:  var(--cor-sections-background); */
-  width: 100%;
-  height: 110vh;
-  font-family: var(--fonte-primaria);
-  background: url(/images/background.svg);
-  object-fit: contain;
-}
-
-a{
-  text-decoration: none;
-}
-
-p{
-  color: white;
-}
-
-h2{
-  color: white;
-}
-
-td{
-  text-align: center;
-  font-size: 22px;
-}
-/* !SECTION - Definições gerais nas SECTIONS */
 
 /* SECTION - SECTION 2 */
 #section2{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 20vh;
+}
+
+#divSloganEmpresa {
+  background-color: var(--cor-halftone);
+  border-radius: 1vh;
+  font-size: 1.9vw;
+  font-family: var(--fonte-secundaria);
+  padding: 1vw;
+  color: var(--cor-sections-background);
 }
 
 #divSection2{
@@ -715,7 +616,7 @@ td{
 }
 
 #imagemPolaroid {
-  background: #ffffff;
+  background: var(--cor-text-light);
   padding: 1vw 1vw 2vw;
   -webkit-transition: all .3s linear;
   -moz-transition: all .3s linear;
@@ -757,7 +658,7 @@ td{
   border-radius: 0.5vw;
   align-items: center;
   background-color: var(--cor-elements-background-dark);
-  margin-bottom: 10vh;
+  margin-bottom: 30vh;
   -webkit-transition: all .3s linear;
   -moz-transition: all .3s linear;
   transition: all .3s linear;
@@ -767,7 +668,7 @@ td{
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
   transform: scale(1.05);
-  box-shadow: 0 0 25px #000000;
+  box-shadow: 0 0 25px var(--cor-text-dark);
 }
 
 .tablep{
@@ -782,7 +683,7 @@ td{
   justify-content: center;
   flex-direction: column;
   gap: 5vw;
-  color: #ffffff;
+  color: var(--cor-text-light);
 }
 
 .parteSuperiorSection3{
@@ -828,26 +729,26 @@ td{
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 22vw);
-  grid-gap: 1vw;
-  justify-content: space-evenly;
+  grid-template-columns: repeat(4, 17vw);
+  grid-gap: 2vw;
+  justify-content: center;
+  margin-bottom: 30vh;
 }
 
 .grid-item {
-  border: 0.1vw solid #ccc;
+  border: 0.1vw solid var(--cor-halftone);
   overflow: hidden;
-  width: 22vw;
-  height: 30vh;
-  background-color: var(--cor-elements-background-light);
+  width: 17vw;
+  /* height: 30vh; */
   border-radius: 0.5vw;
 }
 
 .imagens {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   border: 1vw;
-  border-color: #000;
+  border-color: var(--cor-text-dark);
 }
 /* !SECTION - SECTION 3 */
 
@@ -861,7 +762,7 @@ td{
 
 .titulo{
   text-align: center;
-  color: white;
+  color: var(--cor-text-light);
   font-family: var(--fonte-primaria);
   font-size: 2vw;
   margin-bottom: 8vh;
@@ -876,7 +777,8 @@ td{
 .mapa{
   width: 100%;
   height: 70vh;
-  box-shadow: 0 0 25px #000000;
+  box-shadow: 0 0 25px var(--cor-text-dark);
+    margin-bottom: 50vh;
 }
 
 /* !SECTION - SECTION 4 */
@@ -893,10 +795,9 @@ td{
 
 #ceo{
   text-align: center;
-  color: white;
+  color: var(--cor-text-light);
   font-family: var(--fonte-primaria);
   font-size: 2vw;
-  margin-top: 30vh;
 }
 
 #divCEO{
@@ -905,6 +806,7 @@ td{
   justify-content: center;
   align-items: center;
   gap: 10vh;
+  margin-bottom: 30vh;
 }
 
 .divCEOS{
@@ -960,8 +862,9 @@ td{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-radius: 0 0 4.5vw 4.5vw;
-  height: 170vh;
+  height: 120vh;
   position: relative;
   gap: 5vw;
 }
@@ -969,16 +872,16 @@ td{
 #txtPergunte{
   margin-bottom: 4vh;
   text-align: center;
-  color: white;
+  color: var(--cor-text-light);
   font-family: var(--fonte-primaria);
   font-size: 3vw;
-  margin-top: 50vh;
 }
 
 .accordion {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30vh;
 }
 
 .accordion-item{
@@ -991,8 +894,8 @@ td{
   background-color: var(--cor-elements-background-dark);
   border-width: 0.2vh 0.1vw 0 0.1vw;
   border-style: solid;
-  border-color: #aaaaaa;
-  color: #ffffff;
+  border-color: var(--cor-elements-background-light);
+  color: var(--cor-text-light);
   font-family: var(--fonte-primaria);
   font-size: 1.5vw;
   display: flex;
@@ -1007,7 +910,7 @@ td{
   transition: max-height 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   border-top: none;
   background-color: #3B3F42;
-  color: #ffffff;
+  color: var(--cor-text-light);
 }
 
 .accordion-item.open .accordion-content {
@@ -1016,7 +919,7 @@ td{
   padding-bottom: 1rem;
   border-width: 0 0.1vw 0 0.1vw;
   border-style: solid;
-  border-color: #aaaaaa;
+  border-color: var(--cor-elements-background-light);
 }
 #panel4a-content{
   border-width: 0 0.1vw 0.2vh 0.1vw;
@@ -1040,7 +943,7 @@ td{
   right: 0;
   height: 4px;
   border-radius: calc(4px / 2);
-  background: #ffffff;
+  background: var(--cor-text-light);
   color: inherit;
   opacity: 1;
   transition: none 0.35s cubic-bezier(.5, -0.35, .35, 1.5) 0s;
@@ -1094,7 +997,7 @@ td{
 footer{
   z-index: -1;
   background-color: var(--cor-elements-background-dark);
-  color: white;
+  color: var(--cor-text-light);
   font-size: 1vw;
   height: 59vh;
   width: 100%;
@@ -1108,8 +1011,9 @@ footer{
 }
 
 footer a{
-  color: white;
+  color: var(--cor-text-light);
   text-decoration: none;
+  cursor: pointer;
 }
 
 
@@ -1134,6 +1038,7 @@ footer a{
   gap: 0.5vw;
   list-style: none;
   user-select: none;
+  align-items: center;
 }
 
 #nomeEmpresaFooter{
@@ -1218,18 +1123,16 @@ footer a{
 }
 
 .hover-text {
-  padding: 5px 0;
-  background-color: transparent;
-  cursor: pointer;
+  padding: 0.2vh;
 }
 
 .hover-underline {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 2px;
+  height: 0.1vh;
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--cor-text-light);
   transform: scaleX(0);
   transition: all 0.2s linear;
 }
