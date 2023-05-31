@@ -4,6 +4,8 @@
 
 ## Locais no site para melhorias futuras
 
+- Colocar a tela de carregamento com o tempo da animação completa
+
 - Colocar a tela de carregamento assim que carregado, ela desaparecendo e ao mesmo tempo aparecendo o site
 
 - Colocar uma extensão/API da bolsa de valores
@@ -23,7 +25,7 @@
 - index com efeito fade in
 
 <!-- ANCHOR - Pedido dela no trabalho -->
-- pagina (sobre nos) e (contato)
+- pagina (historia) e (contato)
 
 - pagina (contato) com formulario com os itens input(text, checkbox, radio)
 
