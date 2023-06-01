@@ -50,6 +50,7 @@ nav .logo {
 .nav-list {
   list-style: none;
   display: flex;
+  margin: 0;
 }
 
 .nav-list li {
