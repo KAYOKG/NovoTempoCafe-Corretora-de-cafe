@@ -72,78 +72,87 @@ nav .logo {
 
 /* !SECTION - Header da pagina */
 
-/* SECTION - Pagina */
+/* SECTION - SECTION 1 */
 .carousel-item img{
   height: 90vh;
   object-fit: cover;
 }
+/* !SECTION - SECTION 1 */
 
-/* CARDs */
+/* SECTION - SECTION 2 */
 #section2 {
   display: flex;
   flex-wrap: wrap;
   gap: 4vh;
   justify-content: center;
+  padding: 10vh 5vw 10vh 5vw;
 }
 
 .card {
+  justify-content: center;
   flex-basis: calc(33.33% - 2 * 4vh);
   height: 328px;
   margin: 0;
   padding: 0;
 }
+.badge{
+  width: 50%;
+}
 
 .card-body {
   display: flex;
   justify-content: center;
-  flex-direction:column;
+  flex-direction: column;
 }
 
-.card-title{
+.card-title {
   text-align: center;
 }
+/* !SECTION - SECTION 2 */
 
-#section3{
+/* SECTION - SECTION 3 */
+#section3 {
   color: var(--cor-text-light);
   margin: 0 10vh 0 10vh;
 }
 
-hr{
+hr {
   color: #adb5bd !important;
   border: 0;
   border-top: 1px;
   opacity: .25;
-  margin: 2vh 0!important;
+  margin: 2vh 0 !important;
 }
 
-.esquerda{
+.esquerda {
   display: flex !important;
-  flex-direction: row-reverse!important;
+  flex-direction: row-reverse !important;
 }
 
-.direita{
+.direita {
   display: flex !important;
-  flex-direction: row!important;
+  flex-direction: row !important;
 }
 
-.col-md-5{
+.col-md-5 {
   width: 500px;
 }
 
-.legenda{
+.legenda {
   color: white;
 }
 
-#botaoAtual{
+#botaoAtual {
   display: flex;
   justify-content: center;
-  padding-bottom: 10vh;
+  padding: 5vh 0 10vh 0;
 }
 
-#botaoAtual a{
+#botaoAtual a {
   width: 30vw;
 }
-/* !SECTION - Pagina */
+/* !SECTION - SECTION 3 */
+
 
 /* SECTION - Footer */
 footer {
