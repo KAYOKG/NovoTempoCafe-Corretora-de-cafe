@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Tempo Café | História</title>
+    <title>Novo Tempo Café | Contato</title>
     <link rel="icon" href="/images/icone.svg">
-    <link rel="stylesheet" href="/css/historia.css">
-    <script defer src=""></script>
+    <link rel="stylesheet" href="/css/contato.css">
     <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="/js/contato.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body>
@@ -28,7 +30,205 @@
         </ul>
       </nav>
     </header>
-    <h1>História</h1>
+    <main>
+      <h1>Deixe o seu contato</h1>
+      <section>
+        <div class="h-100 p-5 text-bg-dark rounded-3" id="jumbotron">
+          <iframe class="mapa"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3743.2876908420144!2d-42.030514!3d-20.2469!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbafd94d9cba065%3A0x33a09c429ac198e9!2sNOVO%20TEMPO%20CAF%C3%89%20LTDA!5e0!3m2!1spt-BR!2sbr!4v1685540197627!5m2!1spt-BR!2sbr"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%"
+            height="90%">
+          </iframe>
+          <a href="https://www.google.com/maps/dir//NOVO+TEMPO+CAF%C3%89+LTDA+-+Av.+Felipe+Nacif,+34+-+2%C2%B0+Andar,+Sl+101+-+Baixada,+Manhua%C3%A7u+-+MG,+36902-057/@-20.2470207,-42.030716,19.08z/data=!4m17!1m7!3m6!1s0xbafd94d9cba065:0x33a09c429ac198e9!2sNOVO+TEMPO+CAF%C3%89+LTDA!8m2!3d-20.2469002!4d-42.0305137!16s%2Fg%2F11kbm16n6r!4m8!1m0!1m5!1m1!1s0xbafd94d9cba065:0x33a09c429ac198e9!2m2!1d-42.0305137!2d-20.2469002!3e1?hl=pt-BR&entry=ttu"
+            target="_blank"><button class="btn btn-outline-light" id="btnMapa" type="button" href="">Ver rota
+              completa</button></a>
+        </div>
+
+        <form class="row g-3 needs-validation" novalidate action="../php/database.php" method="post">
+          <div class="col-md-4">
+            <label for="validationCustom01" class="form-label required">Nome</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Nome Sobrenome"
+              oninput="removeNumbers(this)" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Por favor, insira nome e sobrenome.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label required">Telefone</label>
+            <input type="tel" class="form-control" id="validationCustom02" placeholder="XX XXXXXXXXX"
+              pattern="\(\d{2}\) \d{4,5}-\d{4}" oninput="formatPhoneInput(this)" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Por favor, insira um número de telefone válido.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom03" class="form-label required">E-mail</label>
+            <input type="email" class="form-control" id="validationCustom03" placeholder="nome@example.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.?[a-zA-Z]{2,}" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Por favor, insira um endereço de e-mail válido.
+            </div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Preferência para entrar em contato</label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+              <label class="form-check-label" for="validationFormCheck2">Telefone</label>
+            </div>
+            <div class="form-check mb-3">
+              <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+              <label class="form-check-label" for="validationFormCheck3">E-mail</label>
+              <div class="invalid-feedback">More example invalid feedback text</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+          </div>
+        </form>
+        <script> <!-- ANCHOR - Validação de formulário -->
+          (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+              form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+              }, false)
+            })
+          })()
+
+            function removeNumbers(input) {
+              input.value = input.value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ ]/g, '');
+            }
+
+          function formatPhoneInput(input) {
+              const value = input.value.replace(/\D/g, '');
+              const formattedValue = value
+                .replace(/^(\d{2})(\d)/g, '($1) $2')
+                .replace(/(\d)(\d{4})$/, '$1-$2');
+              input.value = formattedValue;
+            }
+
+        </script>
+
+      </section>
+    </main>
+    <footer> <!-- SECTION - Rodapé da pagina-->
+      <div id="conteudoFooter">
+        <div id="div1">
+          <img src="/images/logoNovoTempoCafe.svg">
+          <ul>
+            <li>
+              <div class="link">
+                <p class="hover-text">
+                  <a href="/index.html">Inicio</a>
+                </p>
+                <div class="hover-underline"></div>
+              </div>
+            </li>•
+            <li>
+              <div class="link">
+                <p class="hover-text">
+                  <a href="historia.html">História</a>
+                </p>
+                <div class="hover-underline"></div>
+              </div>
+            </li>•
+            <li>
+              <div class="link">
+                <p class="hover-text">
+                  <a href="contato.html">Contato</a>
+                </p>
+                <div class="hover-underline"></div>
+              </div>
+            </li>
+          </ul>
+          <p id="nomeEmpresaFooter">Novo Tempo Café © 2013</p>
+        </div>
+        <div id="div2">
+          <div class="subDiv2">
+            <img src="/images/icons/map.svg" alt="icons">
+            <div class="link">
+              <p class="hover-text"><a
+                  href="https://www.google.com/maps/dir//NOVO+TEMPO+CAF%C3%89+LTDA+-+Av.+Felipe+Nacif,+34+-+2%C2%B0+Andar,+Sl+101+-+Baixada,+Manhua%C3%A7u+-+MG,+36902-057/@-20.2470207,-42.030716,19.08z/data=!4m17!1m7!3m6!1s0xbafd94d9cba065:0x33a09c429ac198e9!2sNOVO+TEMPO+CAF%C3%89+LTDA!8m2!3d-20.2469002!4d-42.0305137!16s%2Fg%2F11kbm16n6r!4m8!1m0!1m5!1m1!1s0xbafd94d9cba065:0x33a09c429ac198e9!2m2!1d-42.0305137!2d-20.2469002!3e1?hl=pt-BR&entry=ttu"
+                  target="_blank" rel="noreferrer">Av. Felipe Nacif, 34 - 2° Andar<br>Manhuaçu, Minas Gerais, Brasil</a>
+              <div class="hover-underline"></div>
+              </p>
+            </div>
+          </div>
+          <div class="subDiv2">
+            <img src="/images/icons/call.svg" alt="icons">
+            <div class="link">
+              <p class="hover-text">
+                <a href="tel:553333314530">+55 (33) 3331-4530</a>
+              <div class="hover-underline"></div>
+              </p>
+            </div>
+          </div>
+          <div class="subDiv2">
+            <img src="/images/icons/email.svg" alt="ícone de e-mail">
+            <div class="link">
+              <p class="hover-text"><a href="https://mail.google.com/mail/u/0/?view=cm&to=novotempocafe@hotmail.com"
+                  target="_blank">novotempocafe@hotmail.com</a></p>
+              <div class="hover-underline"></div>
+            </div>
+          </div>
+        </div>
+        <div id="div3">
+          <div id="subDiv3">
+            <p id="p1">Sobre a empresa</p>
+            <p id="p2">Novo Tempo Café é uma empresa que atua no ramo de cafés especiais, oferecendo cursos,
+              consultorias e corretagem de café.</p>
+          </div>
+          <div id="sub2Div3">
+            <a href="https://www.instagram.com/novotempocafe/" target="_blank" rel="noreferrer">
+              <img id="insta" src="/images/icons/instagram.svg" alt="Icon Instagram">
+            </a>
+            <div class="link">
+              <p class="hover-text"><a href="https://www.instagram.com/novotempocafe/" target="_blank"
+                  rel="noreferrer">@novotempocafe</a></p>
+              <div class="hover-underline"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div id="desenvolvedor">
+        <p>Feito por</p>
+        <div class="link">
+          <p class="hover-text"><a href="https://github.com/Venidici-Org" target="_blank" rel="noreferrer"><img
+                src="/images/icons/venidiciIcon.svg"></a></p>
+          <div class="hover-underline"></div>
+        </div>
+      </div>
+    </footer>
   </body>
 
 </html>

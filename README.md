@@ -25,24 +25,25 @@
 - index com efeito fade in
 
 <!-- ANCHOR - Pedido dela no trabalho -->
-- pagina (historia) e (contato)
-
-- pagina (contato) com formulario com os itens input(text, checkbox, radio)
+*NOTE - pagina (contato) com formulario com os itens input(text, checkbox, (radio(telefone ou email))
 
 - pagina (contato) com javascript
-  - ter a verficação em tempo real se os dados estão certos para liberar o botão de enviar
-  - Indicar o erro em tempo real se a verificação estiver errada(span)
-  - tratar injeção de codigo SQL
-  - Apos confirmar o envio(tratar os dados contra XSS), enviar as informações para o banco de dados e caso não seja enviada irá aparecer a mensagem(erro de conexão, envie novamente), de preferencia quando aparecer a mensagem na tela, ela aparecer fazendo um efeito ou animação
-  - Depois de confirmado a tela, aparecerá um pop-up no meio da tela com as informações enviadas(php) e botão de visualizar o banco de dados
-  -O botão de visualizar o banco de dados irá levar a pagina de visualização do banco de dados(header e footer em php)
+  *NOTE -ter a verficação em tempo real se os dados estão certos para liberar o botão de enviar
+  *NOTE - Indicar o erro em tempo real se a verificação estiver errada(span)
+  *NOTE - tratar injeção de codigo SQL
+  *STUB Apos confirmar o envio(tratar os dados contra XSS), enviar as informações para o banco de dados e caso não seja enviada irá aparecer a mensagem(erro de conexão, envie novamente), de preferencia quando aparecer a mensagem na tela, ela aparecer fazendo um efeito ou animação
+  *STUB Depois de confirmado a tela, aparecerá um pop-up no meio da tela com as informações enviadas(php) e botão de visualizar o banco de dados
+  *STUB O botão de visualizar o banco de dados irá levar a pagina de visualização do banco de dados(header e footer em php)
+ *STUB - Falta a validaÇão certa do email, está aceitando sem o ponto
 
 - Usar boostrap em alguma das duas paginas
-  - Jumbotron
-  - Carrossel (1 carrossel com pelo menos 3 slides diferentes)
-  - Icones
-  - Cards
-  - Badge - Utilize JavaScript ou jQuery para atualizar o valor de acordo com o significado da badge escolhida por voce
-  - Breadcrumbs
+  *NOTE -  Jumbotron(TELA CONTATO)
+  *NOTE - Carrossel (1 carrossel com pelo menos 3 slides diferentes)(TELA HISTORIA)
+  *NOTE - Icones(TELA HISTORIA)
+  *NOTE - Cards(TELA HISTORIA)
+  *NOTE - Badge - Utilize JavaScript ou jQuery para atualizar o valor de acordo com o significado da badge escolhida por voce(TELA HISTORIA)
+  *STUB Breadcrumbs(TELA BANCO DE DAODS)
 
-- responsavidade em todas as paginas
+*STUB responsavidade em todas as paginas
+
+*STUB estilização das paginas

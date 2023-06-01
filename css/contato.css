@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cor-halftone: #cccccc;
+  --cor-text-dark: #000000;
+  --cor-text-light: #ffffff;
+  --cor-elements-background-light: #aaaaaa;
+  --cor-elements-background-dark: #343434;
+  --cor-sections-background: #181818;
+  --cor-destaque: #B41A1F;
+
+  --fonte-primaria: "Times New Roman", Times, serif;
+  --fonte-secundaria: Arial, Helvetica, sans-serif;
+}
+
+/* SECTION - Header da pagina */
+nav {
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #23232e;
+  height: 8vh;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+nav .logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+/* !SECTION - Header da pagina */
+
+/* SECTION - Conteudo da pagina */
+main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 100%;
+}
+
+section{
+  margin: 0 3% 0 3%;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  /* gap: 2vw; */
+  justify-content: space-between;
+}
+
+#form{
+  height: 70%!important;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form *{
+  padding: 0;
+}
+
+#jumbotron{
+  height: 40vh!important;
+  width: 48%;
+  padding: 24px!important;
+}
+
+#metContato, #checkForm, #subM{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-start;
+}
+
+.mapa{
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px 4px 0 0;
+}
+#m4, #m44{
+  width: 50%;
+}
+
+#btnMapa{
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+}
+
+label.required::after {
+  content: "*";
+  color: red;
+}
+
+/* !SECTION - Conteudo da pagina */
+
+/* SECTION - Footer */
+footer{
+  z-index: -1;
+  background-color: var(--cor-elements-background-dark);
+  color: var(--cor-text-light);
+  font-size: 1vw;
+  height: 47vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3vh;
+
+}
+
+footer a{
+  color: var(--cor-text-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#conteudoFooter{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#div1{
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+#div1 img{
+  width: 8vw;
+}
+
+#div1 ul{
+  display: flex;
+  gap: 0.5vw;
+  list-style: none;
+  user-select: none;
+  padding: 0;
+}
+
+#nomeEmpresaFooter{
+  font-size: 1vw;
+  color: var(--cor-elements-background-light);
+}
+
+#div2{
+  display: flex;
+  flex-direction: column;
+align-self: center;
+  gap: 5vh;
+}
+
+.subDiv2{
+  display: flex;
+  gap: 1vw;
+}
+
+.subDiv2 img{
+  width: 2vw;
+}
+
+#div3{
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+#subDiv3{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+#p1{
+  font-size: 1.3vw;
+  font-weight: bolder;
+  font-family: var(--fonte-secundaria);
+}
+
+#p2{
+  font-size: 1vw;
+  color: var(--cor-elements-background-light);
+  font-family: var(--fonte-primaria);
+  width: 20vw;
+}
+
+#sub2Div3{
+  display: flex;
+  gap: 1vw;
+  font-family: var(--fonte-secundaria);
+  font-weight: bolder;
+}
+
+#sub2Div3 img{
+  width: 2vw;
+  border-radius: 0.52vw;
+}
+
+#sub2Div3:hover img{
+  background-image: linear-gradient(45deg, #D62976, #FA7E1E);
+}
+
+
+#desenvolvedor{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1vw 1vh 0;
+  font-family: var(--fonte-secundaria);
+  gap: 0.5vw;
+}
+
+#desenvolvedor p{
+  margin: 0;
+}
+
+#desenvolvedor img{
+  width: 2vw;
+}
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hover-text {
+  padding: 0.2vh;
+  margin: 0;
+}
+
+.hover-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.1vh;
+  width: 100%;
+  background-color: var(--cor-text-light);
+  transform: scaleX(0);
+  transition: all 0.2s linear;
+}
+
+.hover-text:hover~.hover-underline{
+  transform: scaleX(1);
+}
+/* !SECTION - Footer */
