@@ -74,7 +74,7 @@ nav .logo {
 /* !SECTION - Header da pagina */
 
 /* SECTION - SECTION 1 */
-.carousel-item img{
+.carroselSection1 img{
   height: 90vh;
   object-fit: cover;
 }
@@ -146,8 +146,8 @@ hr {
   flex-direction: row !important;
 }
 
-.col-md-5 {
-  width: 500px;
+.carroselSection3{
+  object-fit: cover;
 }
 
 .legenda {
