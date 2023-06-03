@@ -147,6 +147,7 @@ hr {
 }
 
 .carroselSection3{
+  height: 50vh;
   object-fit: cover;
 }
 
