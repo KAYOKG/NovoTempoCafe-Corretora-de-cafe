@@ -27,7 +27,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  background: #23232e;
+  background: #1E1E1E;
   height: 8vh;
 }
 
@@ -75,7 +75,7 @@ nav .logo {
 
 /* SECTION - SECTION 1 */
 .carroselSection1 img{
-  height: 90vh;
+  margin-top: -8vh;
   object-fit: cover;
 }
 
@@ -123,13 +123,25 @@ nav .logo {
 /* !SECTION - SECTION 2 */
 
 /* SECTION - SECTION 3 */
-#section3 {
+#section3 img {
+  width: 50%;
+}
+
+
+
+.container{
+  background-color: #5B7C85;
+}
+/* !SECTION - SECTION 3 */
+
+/* SECTION - SECTION 4 */
+#section4 {
   color: var(--cor-text-light);
   margin: 0 10vh 0 10vh;
 }
 
 hr {
-  color: #adb5bd !important;
+  color: #bdadad !important;
   border: 0;
   border-top: 1px;
   opacity: .25;
@@ -139,15 +151,18 @@ hr {
 .esquerda {
   display: flex !important;
   flex-direction: row-reverse !important;
+  width: 80%;
 }
 
 .direita {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex ;
+  width: 80%;
+  margin: 0;
+  justify-content: center;
 }
 
-.carroselSection3{
-  height: 50vh;
+.carroselSection3 img{
+  height: auto;
   object-fit: cover;
 }
 
@@ -164,7 +179,23 @@ hr {
 #botaoAtual a {
   width: 30vw;
 }
-/* !SECTION - SECTION 3 */
+
+#jumbotron{
+  background-color: transparent;
+  border: 0.8px dotted #495057;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+#jumbotron p, h1{
+  text-align: center;
+  margin: 8vh 29vh 8vh 29vh;
+}
+
+/* !SECTION - SECTION 4 */
 
 
 /* SECTION - Footer */
@@ -317,5 +348,4 @@ footer a {
 .hover-text:hover~.hover-underline {
   transform: scaleX(1);
 }
-
 /* !SECTION - Footer */
