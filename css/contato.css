@@ -70,6 +70,10 @@ nav .logo {
 /* !SECTION - Header da pagina */
 
 /* SECTION - Conteudo da pagina */
+body{
+  background-color: #EEEEEE;
+}
+
 main{
   display: flex;
   align-items: center;

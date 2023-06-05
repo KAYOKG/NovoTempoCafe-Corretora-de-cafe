@@ -8,12 +8,12 @@
   --cor-text-dark: #000000;
   --cor-text-light: #ffffff;
   --cor-elements-background-light: #aaaaaa;
+  --cor-elements-background-coffe: #633928;
   --cor-elements-background-dark: #343434;
   --cor-sections-background: #181818;
   --cor-destaque: #B41A1F;
-
-  --fonte-primaria: "Times New Roman", Times, serif;
-  --fonte-secundaria: Arial, Helvetica, sans-serif;
+  /* STUB - concertar a box shadowm de todas as divs */
+  --fonte-primaria: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media screen and (max-width: 767px) {
@@ -506,23 +506,22 @@
 /*!SECTION - PRE LOADER DA PAGINA */
 
 /* SECTION - Definições gerais na pagina */
-body {
-  /* background-color: var(--cor-destaque); */
-  /* background: url(/images/background.svg); */
-}
+body {}
 
 main {
   display: none;
   position: relative;
+  background: #707070;
+  z-index: -1;
+  height: 810vh;
 }
 
 section {
   background-color: var(--cor-sections-background);
-  width: 100%;
   font-family: var(--fonte-primaria);
-  /* background: url(/images/background.svg); */
-  object-fit: cover;
   color: var(--cor-text-light);
+  z-index: 1;
+  position:sticky;
 }
 
 a {
@@ -537,27 +536,28 @@ h2 {
   color: var(--cor-text-light);
 }
 
-td {
-  text-align: center;
-  font-size: 22px;
-}
-
 .sobreposta {
-  transform: translateY(-40vh);
+  transform: translateY(-30vh);
 }
 
 /* !SECTION - Definições gerais nas SECTIONS */
 
-/* SECTION - SECTION 1 */
+/* SECTION - HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
 nav {
-  z-index: 2;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  font-family: var(--fonte-primaria);
   background: #23232e;
   height: 8vh;
+  position: sticky;
 }
 
 nav a {
@@ -574,6 +574,12 @@ nav .logo {
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 4px;
+  display: flex;
+  gap: 1vw;
+}
+
+#logoNav {
+  width: 2vw;
 }
 
 .nav-list {
@@ -604,38 +610,30 @@ nav .logo {
   z-index: 0;
   width: 100%;
   background: linear-gradient(180deg, #23232E 0%, #764027 100%);
+  position: sticky;
+  top: 0;
 }
 
-#nomeEmpresa {
-  font-size: 4vw;
-  color: var(--cor-text-dark);
-}
-
-#slogan {
-  font-size: 1.5em;
-  color: var(--cor-text-dark);
-}
-
-/* !SECTION - SECTION 1 */
+/* !SECTION - HEADER */
 
 /* SECTION - SECTION 2 */
 #section2 {
   border-radius: 4.5vw 4.5vw 0 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: 20vh;
-  z-index: -1;
+  gap: 14vh;
+  height: 130vh;
 }
 
 #divSloganEmpresa {
-  background-color: var(--cor-halftone);
+  background-color: #764027;
   border-radius: 1vh;
   font-size: 1.9vw;
-  font-family: var(--fonte-secundaria);
+  font-family: var(--fonte-primaria);
   padding: 1vw;
-  color: var(--cor-sections-background);
+  color: var(--cor-text-light);
   margin-top: 6vh;
 }
 
@@ -695,6 +693,7 @@ nav .logo {
   position: relative;
   top: 0.5vw;
   user-select: none;
+  font-family: var(--fonte-primaria);
 }
 
 
@@ -718,11 +717,12 @@ nav .logo {
   box-sizing: border-box;
   border-radius: 0.5vw;
   align-items: center;
-  background-color: var(--cor-elements-background-dark);
+  background-color: var(--cor-elements-background-coffe);
   margin-bottom: 30vh;
   -webkit-transition: all .3s linear;
   -moz-transition: all .3s linear;
   transition: all .3s linear;
+  font-weight: bold;
 }
 
 .vmo:hover {
@@ -734,18 +734,35 @@ nav .logo {
 
 .tablep {
   font-size: 1.5vw;
-  font-family: var(--fonte-secundaria)
+  font-family: var(--fonte-secundaria);
+  font-weight: bold;
 }
 
 /* !SECTION - SECTION 2 */
 
+.teste{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50vh;
+  color: var(--cor-text-light);
+  background: #ffffff54;
+  backdrop-filter: blur(1vh);
+  -webkit-backdrop-filter: blur(1vh);
+  transform: translateY(-30vh);
+}
+
 /* SECTION - SECTION 3 */
 #section3 {
   display: flex;
+  align-items: flex-start;
   justify-content: center;
-  flex-direction: column;
+  height: 90vh;
   gap: 5vw;
   color: var(--cor-text-light);
+  transform: translateY(-30vh);
+  padding-top: 11.9vh;
 }
 
 .parteSuperiorSection3 {
@@ -780,14 +797,10 @@ nav .logo {
   gap: 1vw;
   align-items: center;
   width: 14.1vw;
+  font-family: var(--fonte-primaria);
+  font-weight: bold;
 }
 
-.elipse {
-  background-color: var(--cor-destaque);
-  width: 1.3vw;
-  height: 1.3vw;
-  border-radius: 50%;
-}
 
 .grid-container {
   display: grid;
@@ -821,6 +834,7 @@ nav .logo {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transform: translateY(-30.1vh);
 }
 
 .titulo {
@@ -854,13 +868,14 @@ nav .logo {
   flex-direction: column;
   align-items: center;
   gap: 5vw;
+  padding-top: 5vh;
 }
 
 #ceo {
-  text-align: center;
   color: var(--cor-text-light);
   font-family: var(--fonte-primaria);
   font-size: 2vw;
+  padding-left: 1vw;
 }
 
 #divCEO {
@@ -870,6 +885,7 @@ nav .logo {
   align-items: center;
   gap: 10vh;
   margin-bottom: 30vh;
+  padding-top: 10vh;
 }
 
 .divCEOS {
@@ -894,7 +910,8 @@ nav .logo {
   width: 25vw;
   margin-top: 5vh;
   font-size: 1.5vw;
-  font-family: var(--fonte-secundaria);
+  font-family: var(--fonte-primaria);
+  font-weight: bold;
   text-align: right;
   z-index: 0;
 }
@@ -902,7 +919,7 @@ nav .logo {
 #txtG h2 {
   display: flex;
   justify-content: flex-end;
-  background-color: var(--cor-elements-background-dark);
+  background-color: var(--cor-elements-background-coffe);
   width: 26vw;
   border-radius: 0 0.4vw 0.4vw 0;
   padding: 1vh;
@@ -910,7 +927,7 @@ nav .logo {
 }
 
 #txtB h2 {
-  background-color: var(--cor-elements-background-dark);
+  background-color: var(--cor-elements-background-coffe);
   width: 30vw;
   text-align: justify;
   border-radius: 0.4vw;
@@ -928,8 +945,10 @@ nav .logo {
   justify-content: center;
   border-radius: 0 0 4.5vw 4.5vw;
   height: 120vh;
-  position: relative;
   gap: 5vw;
+  z-index: 1;
+  position: sticky;
+  top: -40vh;
 }
 
 #txtPergunte {
@@ -991,6 +1010,8 @@ nav .logo {
   border-top: none;
   background-color: #3B3F42;
   color: var(--cor-text-light);
+  font-family: var(--fonte-primaria);
+  font-weight: bold;
 }
 
 .accordion-item.open .accordion-content {
@@ -1081,19 +1102,16 @@ nav .logo {
 
 /* SECTION - Footer */
 footer {
-  z-index: -1;
   background-color: var(--cor-elements-background-dark);
   color: var(--cor-text-light);
+  height: 69vh;
   font-size: 1vw;
-  height: 59vh;
   width: 100%;
-  position: absolute;
-  bottom: -50vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   gap: 5vh;
-
+  transform: translateY(10vh);
 }
 
 footer a {
@@ -1163,7 +1181,7 @@ footer a {
 #p1 {
   font-size: 1.3vw;
   font-weight: bolder;
-  font-family: var(--fonte-secundaria);
+  font-family: var(--fonte-primaria);
 }
 
 #p2 {
@@ -1177,7 +1195,7 @@ footer a {
   display: flex;
   align-items: center;
   gap: 1vw;
-  font-family: var(--fonte-secundaria);
+  font-family: var(--fonte-primaria);
   font-weight: bolder;
 }
 
@@ -1196,7 +1214,7 @@ footer a {
   justify-content: flex-end;
   align-items: center;
   padding: 0 1vw 1vh 0;
-  font-family: var(--fonte-secundaria);
+  font-family: var(--fonte-primaria);
   gap: 0.5vw;
 }
 
