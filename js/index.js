@@ -18,12 +18,12 @@ function startSlideshow() {
     var imagens = document.querySelectorAll(".grid-item .imagens");
     for (var i = 0; i < imagens.length; i++) {
       var randomIndex = Math.floor(Math.random() * images.length);
-      var randomImage = "images/instagramPosts/" + images[randomIndex];
+      var randomImage = "images/imagensIndex/instagramPosts/" + images[randomIndex];
       imagens[i].src = randomImage;
       setTimeout((function (index) {
         return function () {
           var randomIndex = Math.floor(Math.random() * images.length);
-          var randomImage = "images/instagramPosts/" + images[randomIndex];
+          var randomImage = "images/imagensIndex/instagramPosts/" + images[randomIndex];
           imagens[index].src = randomImage;
         }
       })(i), intervals[i]);
@@ -34,29 +34,14 @@ function startSlideshow() {
 function stopSlideshow() {
   clearInterval(intervalId);
 }
-
 startSlideshow();
-
-// NOTE - PERGUNTAS FREQUENTES
-document.addEventListener('DOMContentLoaded', function () {
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', function () {
-      const accordionItem = header.parentElement;
-      accordionItem.classList.toggle('open');
-    });
-  });
-});
 
 // ANCHOR - Biblioteca de suavização do Scroll (smooth-scroll@16.1.3)
 const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 200
 });
 
-
-
-
+// ANCHOR - Função para bloquear o usuario para inspecionar a pagina
 var message = "";
 function clickIE() { if (document.all) { (message); return false; } }
 function clickNS(e) {
@@ -70,10 +55,7 @@ else { document.onmouseup = clickNS; document.oncontextmenu = clickIE; }
 
 document.oncontextmenu = new Function("return false")
 
-
-//  F12
-//==========
-
+// NOTE - F12
 document.onkeypress = function (event) {
   if (e.ctrlKey &&
     (e.keyCode === 123)) {
@@ -82,10 +64,7 @@ document.onkeypress = function (event) {
   }
 };
 
-
-//    CTRL + u
-//==============
-
+// NOTE - CTRL + u
 document.onkeydown = function (e) {
   if (e.ctrlKey &&
     (e.keyCode === 85)) {

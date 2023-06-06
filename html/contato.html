@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Tempo Café | Contato</title>
-    <link rel="icon" href="../images/icone.svg">
+    <link rel="icon" href="../images/icons/iconeLogo.svg">
     <link rel="stylesheet" href="../css/contato.css">
     <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -14,25 +14,33 @@
   </head>
 
   <body>
-    <header id="header"> <!-- SECTION - HEADER -->
+    <!-- SECTION - HEADER -->
+    <header class="pagina">
       <nav>
-        <a class="logo" href="/">Novo Tempo Café</a>
-        <div class="mobile-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+        <a class="logo" href="/"><img id="logoNav" src="../images/icons/iconeLogo.svg" alt="logo da empresa">
+          NOVO TEMPO CAFÉ
+        </a>
+        <div id="paginas">
+          <div class="link">
+            <a href="../index.html" class="hover-text">Início</a>
+            <div class="hover-underline"></div>
+          </div>
+          <div class="link">
+            <a href="historia.html" class="hover-text">História</a>
+            <div class="hover-underline"></div>
+          </div>
+          <div class="link">
+            <a href="#" class="hover-text" id="inicio">Contato</a>
+            <div class="hover-underline"></div>
+          </div>
         </div>
-        <ul class="nav-list">
-          <li><a href="../index.html">Início</a></li>
-          <li><a href="historia.html">História</a></li>
-          <li><a href="#header">Contato</a></li>
-        </ul>
       </nav>
-    </header> <!-- !SECTION - HEADER -->
+    </header>
+    <!-- !SECTION - HEADER -->
 
     <main>
       <h1>Deixe o seu contato</h1>
-      <section id="section1">  <!-- SECTION - SECTION 1 -->
+      <section id="section1"> <!-- SECTION - SECTION 1 -->
         <div class="h-100 p-5 text-bg-dark rounded-3" id="jumbotron">
           <iframe class="mapa"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3743.2876908420144!2d-42.030514!3d-20.2469!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbafd94d9cba065%3A0x33a09c429ac198e9!2sNOVO%20TEMPO%20CAF%C3%89%20LTDA!5e0!3m2!1spt-BR!2sbr!4v1685540197627!5m2!1spt-BR!2sbr"
@@ -69,7 +77,8 @@
           </div>
           <div class="col-md-4">
             <label for="validationCustom03" class="form-label required">E-mail</label>
-            <input type="email" class="form-control" id="validationCustom03" placeholder="nome@example.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.?[a-zA-Z]{2,}" required>
+            <input type="email" class="form-control" id="validationCustom03" placeholder="nome@example.com"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.?[a-zA-Z]{2,}" required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -101,7 +110,30 @@
             </div>
           </div>
           <div class="col-12">
-            <button class="btn btn-primary" type="submit">Enviar</button>
+            <button class="btn btn-primary" type="submit" onclick="showFormDataInModal(event)">Enviar</button>
+
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p id="modalContent">...</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Alterar informações</button>
+                  <a href="contato.html"><button type="button" class="btn btn-secondary" >Limpar dados</button></a>
+                  <button type="button" class="btn btn-primary" id="submitForm">Confirmar</button>
+
+                </div>
+              </div>
+            </div>
           </div>
         </form>
         <script> <!-- ANCHOR - Validação de formulário -->
@@ -124,17 +156,46 @@
             })
           })()
 
-            function removeNumbers(input) {
-              input.value = input.value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ ]/g, '');
-            }
+          function removeNumbers(input) {
+            input.value = input.value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ ]/g, '');
+          }
 
           function formatPhoneInput(input) {
-              const value = input.value.replace(/\D/g, '');
-              const formattedValue = value
-                .replace(/^(\d{2})(\d)/g, '($1) $2')
-                .replace(/(\d)(\d{4})$/, '$1-$2');
-              input.value = formattedValue;
-            }
+            const value = input.value.replace(/\D/g, '');
+            const formattedValue = value
+              .replace(/^(\d{2})(\d)/g, '($1) $2')
+              .replace(/(\d)(\d{4})$/, '$1-$2');
+            input.value = formattedValue;
+          }
+
+          function showFormDataInModal(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('validationCustom01').value;
+            const phone = document.getElementById('validationCustom02').value;
+            const email = document.getElementById('validationCustom03').value;
+
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+        <strong>Nome:</strong> <span id="modalName"></span><br>
+        <strong>Telefone:</strong> <span id="modalPhone"></span><br>
+        <strong>E-mail:</strong> <span id="modalEmail"></span>
+        `;
+
+            document.getElementById('modalName').textContent = name;
+            document.getElementById('modalPhone').textContent = phone;
+            document.getElementById('modalEmail').textContent = email;
+
+            const modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+            modal.show();
+          }
+
+          document.getElementById('submitForm').addEventListener('click', function () {
+              const form = document.querySelector('.needs-validation');
+              form.submit();
+            });
+
+
 
         </script>
 
@@ -143,7 +204,7 @@
     <footer> <!-- SECTION - Footer -->
       <div id="conteudoFooter">
         <div id="div1">
-          <img src="../images/logoNovoTempoCafe.svg">
+          <img src="../images/imagensIndex/logoNovoTempoCafe.svg">
           <ul>
             <li>
               <div class="link">

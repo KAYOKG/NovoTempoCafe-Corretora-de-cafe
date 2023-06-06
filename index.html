@@ -4,24 +4,66 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Novo Tempo Café</title>
-    <link rel="icon" href="images/icone.svg">
+    <link rel="icon" href="images/icons/iconeLogo.svg">
     <link rel="stylesheet" href="css/index.css">
     <script defer src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
-    <script> // ANCHOR - Script para carregar a pagina
+
+    <!-- REVIEW[epic=Revisar, seq=1] - Estilização do navegador mobile no head -->
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="msapp1ication-TileColor" content="#FFFFFF">
+    <meta name="msaplication-navbutton-color" content="#FFFFFF">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Novo Tempo Café">
+
+    <!-- REVIEW[epic=Revisar, seq=2] - Estilização da imagem de compartilhamento do site -->
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:imagem:type" content="images/imagensIndex/logoNovoTempoCafe.svg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:type:" content="website">
+    <meta property="og:card" content="summary_large_image">
+    <meta name="image" content="images/icons/iconeLogo.svg">
+    <meta itemprop="image" content="images/icons/iconeLogo.svg">
+    <meta property="og:image" content="images/icons/iconeLogo.svg">
+
+    <style>
+      /* NOTE - Estilos para a tela de carregamento */
+      .telaDeCarregamento {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f1f1f1;
+      }
+    </style>
+    <script>
+      // NOTE - Função para exibir a tela de carregamento por 5 segundos
       function loading() {
-        document.getElementsByClassName("preLoad")[0].style.display = "none";
-        document.getElementsByClassName("pagina")[0].style.display = "block";
+        var tempoCarregamento = 10; // Tempo padrão de 5 segundos
+
+        // ANCHOR - Verificar se a página está em cache
+        if (performance.navigation.type === 2) {
+          // NOTE - Se a página estiver em cache, diminuir o tempo para 3 segundos
+          tempoCarregamento = 3000;
+        }
+
+        setTimeout(function () {
+          document.querySelector('.telaDeCarregamento').style.display = 'none';
+          document.querySelectorAll('.pagina').forEach(function (element) {
+            element.style.display = 'flex';
+          });
+        }, tempoCarregamento);
       }
     </script>
   </head>
 
   <body onload="loading()">
-    <div class="preLoad"> <!-- NOTE - Carregando a pagina -->
+    <div class="telaDeCarregamento">
       <div class="container">
-        <img class="logo" src="images/icone.svg" alt="Logo da empresa">
+        <img class="logo" src="images/icons/iconeLogo.svg" alt="Logo da empresa">
         <div class="coffee-header">
           <div class="coffee-header__buttons coffee-header__button-one"></div>
           <div class="coffee-header__buttons coffee-header__button-two"></div>
@@ -71,27 +113,36 @@
         <span class="o">O</span>
       </div>
     </div>
-    <main class="pagina"> <!-- SECTION - Corpo Principal da pagina -->
 
-      <header id="header"> <!-- ANCHOR - Header -->
-        <nav>
-          <a class="logo" href="/"><img id="logoNav" src="images/icone.svg" alt="logo da empresa">Novo Tempo Café</a>
-          <div class="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+    <!-- SECTION - HEADER -->
+    <header class="pagina" style="display: none;">
+      <nav>
+        <a class="logo" href="/"><img id="logoNav" src="images/icons/iconeLogo.svg" alt="logo da empresa">
+          NOVO TEMPO CAFÉ
+        </a>
+        <div id="paginas">
+          <div class="link">
+            <a href="#header" class="hover-text" id="inicio">Início</a>
+
           </div>
-          <ul class="nav-list">
-            <li><a href="#section1">Início</a></li>
-            <li><a href="html/historia.html">História</a></li>
-            <li><a href="html/contato.html">Contato</a></li>
-          </ul>
-        </nav>
-      </header>
-      <img class="imagemPrincipal" src="images/imagemPrincipal.svg" alt="Fotos da empresa">
+          <div class="link">
+            <a href="html/historia.html" class="hover-text">História</a>
+            <div class="hover-underline"></div>
+          </div>
+          <div class="link">
+            <a href="html/contato.html" class="hover-text">Contato</a>
+            <div class="hover-underline"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- !SECTION - HEADER -->
 
+    <!-- SECTION - MAIN -->
+    <main class="pagina" style="display: none;">
+      <img id="imagemPrincipal" src="images/imagensIndex/imagemPrincipal.svg" alt="">
 
-      <section id="section2" class="sobreposta"> <!-- SECTION - Parte 2 da pagina -->
+      <section id="section1"> <!-- SECTION - SECTION 1 -->
         <div id="divSloganEmpresa">
           <h4>CORRETORA DE CAFÉ • ASSESSORIA RURAL • SUPORTE PARA EXPORTAÇÃO DE CAFÉ</h4>
         </div>
@@ -104,7 +155,7 @@
             <figure id="imagemPolaroid">
               <a href="https://www.instagram.com/p/ClB56HWO9PB/" rel="noreferrer" target="_blank"
                 title="Giovani e Bruno">
-                <img id="imagemEquipe" src="images/imgSection2.png" alt="Fotos da empresa">
+                <img id="imagemEquipe" src="images/imagensIndex/imgSection2.png" alt="Fotos da empresa">
               </a>
               <figcaption id="rodapePolaroid">Semana Internacional do Café 🌱🍒☕️🤝🌍</figcaption>
             </figure>
@@ -128,80 +179,76 @@
             </div>
           </div>
         </div>
-      </section> <!-- !SECTION - Parte 2 da pagina -->
-      <section class="teste">
-              <div class="parteSuperiorSection3">
-                <div id="atividadesSection3">
-                  <h2>PRINCIPAIS ATIVIDADES<br> DA EMPRESSA</h2>
-                </div>
-                <div id="atividadesTotais">
-                  <div class="blocoDeAtividades">
-                    <div class="atividades">
-                      <div class="elipse"><img src="images/icons/coffe.svg"></div>
-                      ASSESSORIA <br>RURAL
-                    </div>
-                    <div class="atividades">
-                      <div class="elipse"><img src="images/icons/coffe.svg"></div>
-                      EXPORTAÇÃO <br>DE CAFÉ
-                    </div>
-                    <div class="atividades">
-                      <div class="elipse"><img src="images/icons/coffe.svg"></div>
-                      CURSOS DE <br>ESPECIALIZAÇÃO
-                    </div>
-                  </div>
-              
-                  <div class="blocoDeAtividades">
-                    <div class="atividades">
-                      <div class="elipse"><img src="images/icons/coffe.svg"></div>
-                      LAUDOS DE <br>CAFÉS ESPECIAIS
-                    </div>
-                    <div class="atividades">
-                      <div class="elipse"><img src="images/icons/coffe.svg"></div>
-                      EXCURSÕES <br>INTERNACIONAIS
-                    </div>
-                    <div class="atividades">
-                      <div class="elipse"><img src="images/icons/coffe.svg"></div>
-                      TREINAMENTO <br>PROFISSIONAL
-                    </div>
-                  </div>
-                </div>
+      </section><!-- !SECTION - SECTION 1 -->
+
+      <section id="section2"> <!-- SECTION - SECTION 2 -->
+        <div class="parteSuperiorSection3">
+          <div id="atividadesSection3">
+            <h2>PRINCIPAIS ATIVIDADES<br> DA EMPRESSA</h2>
+          </div>
+          <div id="atividadesTotais">
+            <div class="blocoDeAtividades">
+              <div class="atividades">
+                <div class="elipse"><img src="images/icons/coffe.svg"></div>
+                ASSESSORIA <br>RURAL
               </div>
-      </section>
-
-      <section id="section3" class=""> <!-- SECTION - Parte 3 da pagina -->
-        
-
-        <div class="grid-container">
-          <div class="grid-item">
-            <img class="imagens" src="images/instagramPosts/foto1.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/instagramPosts/foto2.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/instagramPosts/foto3.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/instagramPosts/foto4.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/instagramPosts/foto5.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/instagramPosts/foto6.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/instagramPosts/foto7.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/instagramPosts/foto8.svg" alt="imagem">
+              <div class="atividades">
+                <div class="elipse"><img src="images/icons/coffe.svg"></div>
+                EXPORTAÇÃO <br>DE CAFÉ
+              </div>
+              <div class="atividades">
+                <div class="elipse"><img src="images/icons/coffe.svg"></div>
+                CURSOS DE <br>ESPECIALIZAÇÃO
+              </div>
+            </div>
+            <div class="blocoDeAtividades">
+              <div class="atividades">
+                <div class="elipse"><img src="images/icons/coffe.svg"></div>
+                LAUDOS DE <br>CAFÉS ESPECIAIS
+              </div>
+              <div class="atividades">
+                <div class="elipse"><img src="images/icons/coffe.svg"></div>
+                EXCURSÕES <br>INTERNACIONAIS
+              </div>
+              <div class="atividades">
+                <div class="elipse"><img src="images/icons/coffe.svg"></div>
+                TREINAMENTO <br>PROFISSIONAL
+              </div>
+            </div>
           </div>
         </div>
+      </section> <!-- !SECTION - SECTION 2 -->
 
+      <section id="section3" class=""> <!-- SECTION - SECTION 3 -->
+        <div class="grid-container">
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto1.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto2.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto3.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto4.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto5.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto6.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto7.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto8.svg" alt="imagem">
+          </div>
+        </div>
+      </section> <!-- !SECTION - SECTION 3 -->
 
-      </section> <!-- !SECTION - Parte 3 da pagina -->
-
-      <section id="section4" class=""> <!-- SECTION - Parte 4 da página -->
+      <section id="section4" class=""> <!-- SECTION - SECTION 4 -->
         <div class="titulo">
           <h2>LOCALIZAÇÃO</h2>
         </div>
@@ -211,29 +258,31 @@
             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
-      </section><!-- !SECTION - Parte 4 da pagina -->
+      </section><!-- !SECTION - SECTION 4 -->
 
-      <section id="section5" class=""> <!-- SECTION - Parte 5 da pagina -->
-        <div id="ceo">
-          <h2>DIRETORES EXECUTIVOS</h2>
-        </div>
+      <!-- ANCHOR - Exceção -->
+      <div id="ceo" class="pagina" style="display: none;">
+        <h2>DIRETORES EXECUTIVOS</h2>
+      </div>
+
+      <section id="section5" class=""> <!-- SECTION - SECTION 5 -->
         <div id="divCEO">
           <div class="divCEOS" id="ceo1">
-            <img id="imgCEO1" src="images/ceoGiovani.jpg" alt="Co-fundador">
+            <img id="imgCEO1" src="images/imagensIndex/ceoGiovani.jpg" alt="Co-fundador">
             <div class="divTXT" id="txtG">
               <h2 class="txtCEO">Giovani Gomes</h2>
               <!-- STUB - Acrescentar mais informações sobre o Giovani -->
             </div>
           </div>
           <div class="divCEOS" id="ceo2">
-            <img id="imgCEO2" src="images/ceoBruno.jpg" alt="Co-fundador">
+            <img id="imgCEO2" src="images/imagensIndex/ceoBruno.jpg" alt="Co-fundador">
             <div class="divTXT" id="txtB">
               <h2 class="txtCEO">Bruno Sathler</h2>
               <!-- STUB - Acrescentar mais informações sobre o Bruno -->
             </div>
           </div>
         </div>
-      </section> <!-- !SECTION - Parte 5 da pagina -->
+      </section> <!-- !SECTION - SECTION 5 -->
 
       <section id="section6" class=""> <!-- SECTION - Parte 6 da pagina -->
         <h1 id="txtPergunte">PERGUNTAS FREQUENTES</h1>
@@ -302,82 +351,85 @@
           </div>
         </div>
       </section> <!-- !SECTION - Parte 6 da pagina -->
-      <footer> <!-- SECTION - Rodapé da pagina-->
-        <div id="conteudoFooter">
-          <div id="div1"> <img src="images/logoNovoTempoCafe.svg">
-            <ul>
-              <li>
-                <div class="link">
-                  <p class="hover-text"> <a href="#header">Inicio</a> </p>
-                  <div class="hover-underline"></div>
-                </div>
-              </li>• <li>
-                <div class="link">
-                  <p class="hover-text"> <a href="html/sobreNos.html">Sobre Nós</a> </p>
-                  <div class="hover-underline"></div>
-                </div>
-              </li>• <li>
-                <div class="link">
-                  <p class="hover-text"> <a href="html/contato.html">Contato</a> </p>
-                  <div class="hover-underline"></div>
-                </div>
-              </li>
-            </ul>
-            <p id="nomeEmpresaFooter">Novo Tempo Café © 2013</p>
-          </div>
-          <div id="div2">
-            <div class="subDiv2"> <img src="images/icons/map.svg" alt="icons">
-              <div class="link">
-                <p class="hover-text"><a
-                    href="https://www.google.com/maps/dir//NOVO+TEMPO+CAF%C3%89+LTDA+-+Av.+Felipe+Nacif,+34+-+2%C2%B0+Andar,+Sl+101+-+Baixada,+Manhua%C3%A7u+-+MG,+36902-057/@-20.2470207,-42.030716,19.08z/data=!4m17!1m7!3m6!1s0xbafd94d9cba065:0x33a09c429ac198e9!2sNOVO+TEMPO+CAF%C3%89+LTDA!8m2!3d-20.2469002!4d-42.0305137!16s%2Fg%2F11kbm16n6r!4m8!1m0!1m5!1m1!1s0xbafd94d9cba065:0x33a09c429ac198e9!2m2!1d-42.0305137!2d-20.2469002!3e1?hl=pt-BR&entry=ttu"
-                    target="_blank" rel="noreferrer">Av. Felipe Nacif, 34 - 2° Andar<br>Manhuaçu, Minas Gerais,
-                    Brasil</a>
-                <div class="hover-underline"></div>
-                </p>
-              </div>
-            </div>
-            <div class="subDiv2"> <img src="images/icons/call.svg" alt="icons">
-              <div class="link">
-                <p class="hover-text"> <a href="tel:553333314530">+55 (33) 3331-4530</a>
-                <div class="hover-underline"></div>
-                </p>
-              </div>
-            </div>
-            <div class="subDiv2"> <img src="images/icons/email.svg" alt="ícone de e-mail">
-              <div class="link">
-                <p class="hover-text"><a href="https://mail.google.com/mail/u/0/?view=cm&to=novotempocafe@hotmail.com"
-                    target="_blank">novotempocafe@hotmail.com</a> </p>
-                <div class="hover-underline"></div>
-              </div>
-            </div>
-          </div>
-          <div id="div3">
-            <div id="subDiv3">
-              <p id="p1">Sobre a empresa</p>
-              <p id="p2">Novo Tempo Café é uma empresa que atua no ramo de cafés especiais, oferecendo cursos,
-                consultorias e corretagem de café.</p>
-            </div>
-            <div id="sub2Div3"> <a href="https://www.instagram.com/novotempocafe/" target="_blank" rel="noreferrer">
-                <img id="insta" src="images/icons/instagram.svg" alt="Icon Instagram"> </a>
-              <div class="link">
-                <p class="hover-text"><a href="https://www.instagram.com/novotempocafe/" target="_blank"
-                    rel="noreferrer">@novotempocafe</a></p>
-                <div class="hover-underline"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="desenvolvedor">
-          <p>Feito por</p>
-          <div class="link">
-            <p class="hover-text"><a href="https://github.com/Venidici-Org" target="_blank" rel="noreferrer"><img
-                  src="images/icons/venidiciIcon.svg"></a></p>
-            <div class="hover-underline"></div>
-          </div>
-        </div>
-      </footer> <!-- !SECTION - Rodapé da pagina -->
+    </main>
+    <!-- !SECTION - MAIN -->
 
-    </main> <!-- !SECTION - Fim do Corpo Principal da pagina -->
+    <!-- SECTION - FOOTER -->
+    <footer class="pagina" style="display: none;">
+      <div id="conteudoFooter">
+        <div id="div1"> <img src="images/imagensIndex/logoNovoTempoCafe.svg">
+          <ul>
+            <li>
+              <div class="link">
+                <p class="hover-text"> <a href="#">Inicio</a> </p>
+                <div class="hover-underline"></div>
+              </div>
+            </li>• <li>
+              <div class="link">
+                <p class="hover-text"> <a href="html/sobreNos.html">Sobre Nós</a> </p>
+                <div class="hover-underline"></div>
+              </div>
+            </li>• <li>
+              <div class="link">
+                <p class="hover-text"> <a href="html/contato.html">Contato</a> </p>
+                <div class="hover-underline"></div>
+              </div>
+            </li>
+          </ul>
+          <p id="nomeEmpresaFooter">Novo Tempo Café © 2013</p>
+        </div>
+        <div id="div2">
+          <div class="subDiv2"> <img src="images/icons/map.svg" alt="icons">
+            <div class="link">
+              <p class="hover-text"><a
+                  href="https://www.google.com/maps/dir//NOVO+TEMPO+CAF%C3%89+LTDA+-+Av.+Felipe+Nacif,+34+-+2%C2%B0+Andar,+Sl+101+-+Baixada,+Manhua%C3%A7u+-+MG,+36902-057/@-20.2470207,-42.030716,19.08z/data=!4m17!1m7!3m6!1s0xbafd94d9cba065:0x33a09c429ac198e9!2sNOVO+TEMPO+CAF%C3%89+LTDA!8m2!3d-20.2469002!4d-42.0305137!16s%2Fg%2F11kbm16n6r!4m8!1m0!1m5!1m1!1s0xbafd94d9cba065:0x33a09c429ac198e9!2m2!1d-42.0305137!2d-20.2469002!3e1?hl=pt-BR&entry=ttu"
+                  target="_blank" rel="noreferrer">Av. Felipe Nacif, 34 - 2° Andar<br>Manhuaçu, Minas Gerais,
+                  Brasil</a>
+              <div class="hover-underline"></div>
+              </p>
+            </div>
+          </div>
+          <div class="subDiv2"> <img src="images/icons/call.svg" alt="icons">
+            <div class="link">
+              <p class="hover-text"> <a href="tel:553333314530">+55 (33) 3331-4530</a>
+              <div class="hover-underline"></div>
+              </p>
+            </div>
+          </div>
+          <div class="subDiv2"> <img src="images/icons/email.svg" alt="ícone de e-mail">
+            <div class="link">
+              <p class="hover-text"><a href="https://mail.google.com/mail/u/0/?view=cm&to=novotempocafe@hotmail.com"
+                  target="_blank">novotempocafe@hotmail.com</a> </p>
+              <div class="hover-underline"></div>
+            </div>
+          </div>
+        </div>
+        <div id="div3">
+          <div id="subDiv3">
+            <p id="p1">Sobre a empresa</p>
+            <p id="p2">Novo Tempo Café é uma empresa que atua no ramo de cafés especiais, oferecendo cursos,
+              consultorias e corretagem de café.</p>
+          </div>
+          <div id="sub2Div3"> <a href="https://www.instagram.com/novotempocafe/" target="_blank" rel="noreferrer">
+              <img id="insta" src="images/icons/instagram.svg" alt="Icon Instagram"> </a>
+            <div class="link">
+              <p class="hover-text"><a href="https://www.instagram.com/novotempocafe/" target="_blank"
+                  rel="noreferrer">@novotempocafe</a></p>
+              <div class="hover-underline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="desenvolvedor">
+        <p>Feito por</p>
+        <div class="link">
+          <p class="hover-text"><a href="https://github.com/Venidici-Org" target="_blank" rel="noreferrer"><img
+                src="images/icons/venidiciIcon.svg"></a></p>
+          <div class="hover-underline"></div>
+        </div>
+      </div>
+    </footer>
+    <!-- !SECTION - FOOTER -->
   </body>
 
 </html>
