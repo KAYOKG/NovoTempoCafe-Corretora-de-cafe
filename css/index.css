@@ -19,19 +19,24 @@
   --fonte-primaria: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html{
+  font-size: 16px;
+}
+
 
 /* SECTION - TELA DE CARREGAMENTO */
-.preLoad {
+.telaDeCarregamento {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   width: 100%;
+  user-select: none;
 }
 
 .container {
-  width: 19.5vw;
-  height: 280px;
+  width: 18.73rem;
+  height: 17.52rem;
   position: relative;
   top: 20vh;
 }
@@ -333,7 +338,6 @@
 
 .loader {
   background-color: transparent;
-  scale: 2;
   z-index: 0;
   margin-top: 15vw;
 }
@@ -468,6 +472,7 @@
   animation: pass 2s ease-in-out infinite;
   animation-delay: 2.6s;
   letter-spacing: 0.5em;
+  user-select: none;
 }
 
 @keyframes pass {
@@ -518,7 +523,7 @@ a {
 /* SECTION - HEADER */
 header {
   width: 100%;
-  height: 10vh;
+  height: 10%;
   background-color: var(--cor-elements-background-azul);
   position: fixed;
   top: 0;
@@ -528,15 +533,17 @@ header {
 nav {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
+  gap: 20%;
 }
 
 nav .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 170%;
+  width: 18rem;
 }
 
 nav img {
@@ -572,23 +579,20 @@ section {
   object-fit: cover;
   position: sticky;
   top: 0;
-  margin-top: 10vh;
+  margin-top: 5%;
   z-index: 0;
 }
 
-
-
 /* SECTION - SECTION 1 */
 #section1 {
-  border-radius: 4.5vw 4.5vw 0 0;
+  border-radius: 6% 6% 0 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   gap: 14vh;
-  height: 130vh;
-  margin-top: -26vh;
-  padding-top: 25px;
+  margin-top: -14%;
+  padding-top: 2%;
 }
 
 #divSloganEmpresa {
