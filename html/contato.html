@@ -55,7 +55,7 @@
         <form class="row g-3 needs-validation" novalidate action="../php/database.php" method="post">
           <div class="col-md-4">
             <label for="validationCustom01" class="form-label required">Nome</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Nome Sobrenome"
+            <input type="text" class="form-control" id="validationCustom01" name="validationCustom01" placeholder="Nome Sobrenome"
               oninput="removeNumbers(this)" required>
             <div class="valid-feedback">
               Looks good!
@@ -66,7 +66,7 @@
           </div>
           <div class="col-md-4">
             <label for="validationCustom02" class="form-label required">Telefone</label>
-            <input type="tel" class="form-control" id="validationCustom02" placeholder="XX XXXXXXXXX"
+            <input type="tel" class="form-control" id="validationCustom02" name="validationCustom02" placeholder="XX XXXXXXXXX"
               pattern="\(\d{2}\) \d{4,5}-\d{4}" oninput="formatPhoneInput(this)" required>
             <div class="valid-feedback">
               Looks good!
@@ -77,7 +77,7 @@
           </div>
           <div class="col-md-4">
             <label for="validationCustom03" class="form-label required">E-mail</label>
-            <input type="email" class="form-control" id="validationCustom03" placeholder="nome@example.com"
+            <input type="email" class="form-control" id="validationCustom03" name="email" placeholder="nome@example.com"
               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.?[a-zA-Z]{2,}" required>
             <div class="valid-feedback">
               Looks good!
@@ -89,11 +89,11 @@
           <div class="col-12">
             <label class="form-label">Preferência para entrar em contato</label>
             <div class="form-check">
-              <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+              <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" value="telefone" required>
               <label class="form-check-label" for="validationFormCheck2">Telefone</label>
             </div>
             <div class="form-check mb-3">
-              <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+              <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" value="email" required>
               <label class="form-check-label" for="validationFormCheck3">E-mail</label>
               <div class="invalid-feedback">More example invalid feedback text</div>
             </div>
