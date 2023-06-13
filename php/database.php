@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
   <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Tempo Café | Contatos</title>
     <link rel="icon" href="../images/icons/iconeLogo.svg">
+    <link rel="stylesheet" href="../css/database.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </head>
@@ -39,38 +40,59 @@
     $stmtSelectAll = $pdo->prepare($sqlSelectAll);
     $stmtSelectAll->execute();
     ?>
-    <div class="container">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Telefone</th>
-            <th scope="col">Email</th>
-            <th scope="col">Preferência para contato</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php while ($row = $stmtSelectAll->fetch(PDO::FETCH_ASSOC)) { ?>
+    <main>
+      <div class="container my-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-custom overflow-hidden text-center bg-body-tertiary border rounded-3">
+            <li class="breadcrumb-item">
+              <a class="link-body-emphasis fw-semibold text-decoration-none" href="../index.html">
+                <svg class="bi" width="16" height="16">
+                  <use xlink:href="#house-door-fill"></use>
+                </svg>
+                Início
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              <a class="link-body-emphasis fw-semibold text-decoration-none" href="../html/contato.html">Contato</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Contatos
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="container">
+        <table class="table table-striped">
+          <thead>
             <tr>
-              <td>
-                <?php echo $row['nome']; ?>
-              </td>
-              <td>
-                <?php echo $row['telefone']; ?>
-              </td>
-              <td>
-                <?php echo $row['email']; ?>
-              </td>
-              <td>
-                <?php echo $row['telOuEmail']; ?>
-              </td>
+              <th scope="col">Nome</th>
+              <th scope="col">Telefone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Preferência para contato</th>
             </tr>
-          <?php } ?>
-        </tbody>
-      </table>
-    </div>
-
-    <?php include 'header.php'; ?>
+          </thead>
+          <tbody>
+            <?php while ($row = $stmtSelectAll->fetch(PDO::FETCH_ASSOC)) { ?>
+              <tr>
+                <td>
+                  <?php echo $row['nome']; ?>
+                </td>
+                <td>
+                  <?php echo $row['telefone']; ?>
+                </td>
+                <td>
+                  <?php echo $row['email']; ?>
+                </td>
+                <td>
+                  <?php echo $row['telOuEmail']; ?>
+                </td>
+              </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <?php include 'footer.php'; ?>
   </body>
 
 </html>
