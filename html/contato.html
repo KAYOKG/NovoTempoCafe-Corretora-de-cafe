@@ -26,7 +26,7 @@
             <div class="hover-underline"></div>
           </div>
           <div class="link">
-            <a href="historia.html" class="hover-text">História</a>
+            <a href="../php/historia.php" class="hover-text">História</a>
             <div class="hover-underline"></div>
           </div>
           <div class="link">
@@ -52,35 +52,35 @@
               completa</button></a>
         </div>
 
-        <form class="row g-3 needs-validation" novalidate action="../php/database.php" method="post">
-          <div class="col-md-4">
+        <form class="row g-3 needs-validation d-flex flex-column py-5" novalidate action="../php/database.php" method="post">
+          <div class="col-md-13">
             <label for="validationCustom01" class="form-label required">Nome</label>
-            <input type="text" class="form-control" id="validationCustom01" name="validationCustom01" placeholder="Nome Sobrenome"
-              oninput="removeNumbers(this)" required>
+            <input type="text" class="form-control" id="validationCustom01" name="validationCustom01"
+              placeholder="Nome Sobrenome" oninput="removeNumbers(this)" required>
             <div class="valid-feedback">
-              Looks good!
+              Correto
             </div>
             <div class="invalid-feedback">
               Por favor, insira nome e sobrenome.
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-13">
             <label for="validationCustom02" class="form-label required">Telefone</label>
-            <input type="tel" class="form-control" id="validationCustom02" name="validationCustom02" placeholder="XX XXXXXXXXX"
-              pattern="\(\d{2}\) \d{4,5}-\d{4}" oninput="formatPhoneInput(this)" required>
+            <input type="tel" class="form-control" id="validationCustom02" name="validationCustom02"
+              placeholder="XX XXXXXXXXX" pattern="\(\d{2}\) \d{4,5}-\d{4}" oninput="formatPhoneInput(this)" required>
             <div class="valid-feedback">
-              Looks good!
+              Correto
             </div>
             <div class="invalid-feedback">
               Por favor, insira um número de telefone válido.
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-13">
             <label for="validationCustom03" class="form-label required">E-mail</label>
             <input type="email" class="form-control" id="validationCustom03" name="email" placeholder="nome@example.com"
               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.?[a-zA-Z]{2,}" required>
             <div class="valid-feedback">
-              Looks good!
+              Correto
             </div>
             <div class="invalid-feedback">
               Por favor, insira um endereço de e-mail válido.
@@ -89,29 +89,30 @@
           <div class="col-12">
             <label class="form-label">Preferência para entrar em contato</label>
             <div class="form-check">
-              <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" value="telefone" required>
+              <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked"
+                value="telefone" required>
               <label class="form-check-label" for="validationFormCheck2">Telefone</label>
             </div>
             <div class="form-check mb-3">
-              <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" value="email" required>
+              <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" value="email"
+                required>
               <label class="form-check-label" for="validationFormCheck3">E-mail</label>
-              <div class="invalid-feedback">More example invalid feedback text</div>
+              <div class="invalid-feedback">Selecione ao menos 1 campo</div>
             </div>
           </div>
           <div class="col-12">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
               <label class="form-check-label" for="invalidCheck">
-                Agree to terms and conditions
+                Eu concordo com os termos e condições de uso dos meus dados.
               </label>
               <div class="invalid-feedback">
-                You must agree before submitting.
+                Para enviar o contato esse campo é obrigatório.
               </div>
             </div>
           </div>
           <div class="col-12">
             <button class="btn btn-primary" type="submit" onclick="showFormDataInModal(event)">Enviar</button>
-
           </div>
 
           <!-- Modal -->
@@ -128,7 +129,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Alterar informações</button>
-                  <a href="contato.html"><button type="button" class="btn btn-secondary" >Limpar dados</button></a>
+                  <a href="contato.html"><button type="button" class="btn btn-secondary">Limpar dados</button></a>
                   <button type="button" class="btn btn-primary" id="submitForm">Confirmar</button>
 
                 </div>
@@ -169,34 +170,37 @@
           }
 
           function showFormDataInModal(event) {
-            event.preventDefault();
+              event.preventDefault();
 
-            const name = document.getElementById('validationCustom01').value;
-            const phone = document.getElementById('validationCustom02').value;
-            const email = document.getElementById('validationCustom03').value;
+              const form = event.target.closest('form');
 
-            const modalContent = document.getElementById('modalContent');
-            modalContent.innerHTML = `
-        <strong>Nome:</strong> <span id="modalName"></span><br>
-        <strong>Telefone:</strong> <span id="modalPhone"></span><br>
-        <strong>E-mail:</strong> <span id="modalEmail"></span>
-        `;
+              // Verifica se o formulário é válido
+              if (form.checkValidity()) {
+                const formData = new FormData(form);
 
-            document.getElementById('modalName').textContent = name;
-            document.getElementById('modalPhone').textContent = phone;
-            document.getElementById('modalEmail').textContent = email;
+                const modalContent = document.querySelector('#modalContent');
+                modalContent.innerHTML = `
+      <strong>Nome:</strong> <span id="modalName"></span><br>
+      <strong>Telefone:</strong> <span id="modalPhone"></span><br>
+      <strong>E-mail:</strong> <span id="modalEmail"></span>
+    `;
 
-            const modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
-            modal.show();
-          }
+                document.getElementById('modalName').textContent = formData.get('validationCustom01');
+                document.getElementById('modalPhone').textContent = formData.get('validationCustom02');
+                document.getElementById('modalEmail').textContent = formData.get('email');
+
+                const modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+                modal.show();
+              } else {
+                form.classList.add('was-validated');
+              }
+            }
+
 
           document.getElementById('submitForm').addEventListener('click', function () {
-              const form = document.querySelector('.needs-validation');
-              form.submit();
-            });
-
-
-
+            const form = document.querySelector('.needs-validation');
+            form.submit();
+          });
         </script>
 
       </section> <!-- SECTION - SECTION 1 -->

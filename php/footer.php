@@ -14,7 +14,7 @@
         <li>
           <div class="link">
             <p class="hover-text">
-              <a href="../html/historia.html">História</a>
+              <a href="historia.php">História</a>
             </p>
             <div class="hover-underline"></div>
           </div>

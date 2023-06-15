@@ -1,4 +1,4 @@
-//ANCHOR - Função do carrosel de imagens
+//ANCHOR - Função do carrossel de imagens
 var images = [
   "foto1.svg", "foto2.svg", "foto3.svg", "foto4.svg",
   "foto5.svg", "foto6.svg", "foto7.svg", "foto8.svg",
@@ -11,30 +11,32 @@ var images = [
   "foto33.svg", "foto34.svg", "foto35.svg", "foto36.svg",
   "foto37.svg", "foto38.svg", "foto39.svg"
 ];
-var intervals = [2000, 4000, 6000, 8000, 10000, 12000, 14000, 16000];
+var currentIndex = 0;
+var imageChangeInterval = 2000;
+var imagens = document.querySelectorAll(".grid-item .imagens");
 
-function startSlideshow() {
-  intervalId = setInterval(function () {
-    var imagens = document.querySelectorAll(".grid-item .imagens");
-    for (var i = 0; i < imagens.length; i++) {
-      var randomIndex = Math.floor(Math.random() * images.length);
-      var randomImage = "images/imagensIndex/instagramPosts/" + images[randomIndex];
-      imagens[i].src = randomImage;
-      setTimeout((function (index) {
-        return function () {
-          var randomIndex = Math.floor(Math.random() * images.length);
-          var randomImage = "images/imagensIndex/instagramPosts/" + images[randomIndex];
-          imagens[index].src = randomImage;
-        }
-      })(i), intervals[i]);
-    }
-  }, 18000);
+function updateImage(index) {
+  currentIndex = (currentIndex + 1) % images.length;
+  var nextImage = "images/imagensIndex/instagramPosts/" + images[currentIndex];
+  imagens[index].src = nextImage;
 }
-// STUB - Melhorar o carrosel de imagens
+
+function startSlideshow(index) {
+  if (index >= imagens.length) {
+    index = 0;
+  }
+  updateImage(index);
+  setTimeout(function () {
+    startSlideshow(index + 1);
+  }, imageChangeInterval);
+}
+
 function stopSlideshow() {
-  clearInterval(intervalId);
+  clearTimeout(timeoutId);
 }
-startSlideshow();
+
+startSlideshow(0);
+
 
 // ANCHOR - Biblioteca de suavização do Scroll (smooth-scroll@16.1.3)
 const scroll = new SmoothScroll('a[href*="#"]', {

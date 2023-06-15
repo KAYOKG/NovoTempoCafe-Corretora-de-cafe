@@ -29,20 +29,10 @@
     <meta itemprop="image" content="images/icons/iconeLogo.svg">
     <meta property="og:image" content="images/icons/iconeLogo.svg">
 
-    <style>
-      /* NOTE - Estilos para a tela de carregamento */
-      .telaDeCarregamento {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: #f1f1f1;
-      }
-    </style>
     <script>
       // NOTE - Função para exibir a tela de carregamento por 5 segundos
       function loading() {
-        var tempoCarregamento = 5000; // Tempo padrão de 5 segundos
+        var tempoCarregamento = 10; // Tempo padrão de 5 segundos
 
         // ANCHOR - Verificar se a página está em cache
         if (performance.navigation.type === 2) {
@@ -117,16 +107,16 @@
     <!-- SECTION - HEADER -->
     <header class="pagina" style="display: none;">
       <nav>
-        <a class="logo" href="/"><img id="logoNav" src="images/icons/iconeLogo.svg" alt="logo da empresa">
+        <a class="logo" href="#"><img id="logoNav" src="images/icons/iconeLogo.svg" alt="logo da empresa">
           NOVO TEMPO CAFÉ
         </a>
         <div id="paginas">
           <div class="link">
-            <a href="#header" class="hover-text" id="inicio">Início</a>
+            <a href="#" class="hover-text" id="inicio">Início</a>
 
           </div>
           <div class="link">
-            <a href="html/historia.html" class="hover-text">História</a>
+            <a href="php/historia.php" class="hover-text">História</a>
             <div class="hover-underline"></div>
           </div>
           <div class="link">
@@ -140,8 +130,8 @@
 
     <!-- SECTION - MAIN -->
     <main class="pagina" style="display: none;">
-      <img id="imagemPrincipal" src="images/imagensIndex/imagemPrincipal.svg" alt="">
-
+      <img class="imagemPrincipal" src="images/imagensIndex/imagemPrincipal.svg" alt="">
+      <!-- TODO <img class="imagemPrincipal" src="images/imagensIndex/imagemPrincipal2.svg" alt=""> -->
       <section id="section1"> <!-- SECTION - SECTION 1 -->
         <div id="divSloganEmpresa">
           <h4>CORRETORA DE CAFÉ • ASSESSORIA RURAL • SUPORTE PARA EXPORTAÇÃO DE CAFÉ</h4>
@@ -219,36 +209,36 @@
         </div>
       </section> <!-- !SECTION - SECTION 2 -->
 
-      <section id="section3" class=""> <!-- SECTION - SECTION 3 -->
+      <section id="section3"> <!-- SECTION - SECTION 3 -->
         <div class="grid-container">
-          <div class="grid-item">
-            <img class="imagens" src="images/imagensIndex/instagramPosts/foto1.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/imagensIndex/instagramPosts/foto2.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/imagensIndex/instagramPosts/foto3.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/imagensIndex/instagramPosts/foto4.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/imagensIndex/instagramPosts/foto5.svg" alt="imagem">
-          </div>
-          <div class="grid-item">
-            <img class="imagens" src="images/imagensIndex/instagramPosts/foto6.svg" alt="imagem">
-          </div>
           <div class="grid-item">
             <img class="imagens" src="images/imagensIndex/instagramPosts/foto7.svg" alt="imagem">
           </div>
           <div class="grid-item">
-            <img class="imagens" src="images/imagensIndex/instagramPosts/foto8.svg" alt="imagem">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto19.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto23.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto34.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto13.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto26.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto37.svg" alt="imagem">
+          </div>
+          <div class="grid-item">
+            <img class="imagens" src="images/imagensIndex/instagramPosts/foto39.svg" alt="imagem">
           </div>
         </div>
       </section> <!-- !SECTION - SECTION 3 -->
 
-      <section id="section4" class=""> <!-- SECTION - SECTION 4 -->
+      <section id="section4"> <!-- SECTION - SECTION 4 -->
         <div class="titulo">
           <h2>LOCALIZAÇÃO</h2>
         </div>
@@ -261,92 +251,92 @@
       </section><!-- !SECTION - SECTION 4 -->
 
       <!-- ANCHOR - Exceção -->
-      <div id="ceo" class="pagina" style="display: none;">
+      <div id="ceo" class="pagina">
         <h2>DIRETORES EXECUTIVOS</h2>
       </div>
 
-      <section id="section5" class=""> <!-- SECTION - SECTION 5 -->
-        <div id="divCEO">
-          <div class="divCEOS" id="ceo1">
-            <img id="imgCEO1" src="images/imagensIndex/ceoGiovani.jpg" alt="Co-fundador">
-            <div class="divTXT" id="txtG">
-              <h2 class="txtCEO">Giovani Gomes</h2>
-              <!-- STUB - Acrescentar mais informações sobre o Giovani -->
+      <section id="section5"> <!-- SECTION - SECTION 5 -->
+        <article class="card">
+          <img class="card__background" src="images/imagensIndex/ceoGiovani.jpg" alt="Foto Giovani" />
+          <div class="card__content | flow">
+            <div class="card__content--container | flow">
+              <h2 class="card__title">Giovani Gomes</h2>
+              <p class="card__description">
+                "Não fui eu que ordenei a você? Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar." Josué 1:9
+              </p>
             </div>
+            <!-- TODO <button class="card__button">Entre em contato</button> -->
           </div>
-          <div class="divCEOS" id="ceo2">
-            <img id="imgCEO2" src="images/imagensIndex/ceoBruno.jpg" alt="Co-fundador">
-            <div class="divTXT" id="txtB">
-              <h2 class="txtCEO">Bruno Sathler</h2>
-              <!-- STUB - Acrescentar mais informações sobre o Bruno -->
+        </article>
+        <article class="card">
+          <img class="card__background" src="images/imagensIndex/ceoBruno.jpg" alt="Foto Bruno" />
+          <div class="card__content | flow">
+            <div class="card__content--container | flow">
+              <h2 class="card__title">Bruno Sathler</h2>
+              <p class="card__description">
+                “Busquem, pois, em primeiro lugar o Reino de Deus e a sua justiça, e todas essas coisas lhes serão acrescentadas.” Mateus 6:33
+              </p>
             </div>
+            <!-- TODO <button class="card__button">Entre em contato</button> -->
           </div>
-        </div>
+        </article>
       </section> <!-- !SECTION - SECTION 5 -->
 
-      <section id="section6" class=""> <!-- SECTION - Parte 6 da pagina -->
+      <section id="section6"> <!-- SECTION - Parte 6 da pagina -->
         <h1 id="txtPergunte">PERGUNTAS FREQUENTES</h1>
-        <div class="accordion">
-          <div class="accordion-item">
-            <div class="accordion-header" id="panel1a-header">
-              Quando serão realizados os próximos cursos?
-              <div class="arrow">
-                <div class="arrow-top"></div>
-                <div class="arrow-bottom"></div>
+        <div class="row">
+          <div class="col">
+            <div class="tabs">
+              <div class="tab">
+                <input claas="inputPerguntas" type="checkbox" id="chck1">
+                <label class="tab-label" for="chck1">Quando serão realizados os próximos cursos?</label>
+                <div class="tab-content">
+                  Os próximos cursos geralmente são realizados anualmente, nos meses de março e abril.
+                </div>
               </div>
-            </div>
-            <div class="accordion-content" id="panel1a-content">
-              Os próximos cursos geralmente são realizados anualmente, nos meses de março e abril.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header" id="panel2a-header">
-              Quando ocorrerá o próximo Coffee Tour/intercâmbio para produtores de café?
-              <div class="arrow">
-                <div class="arrow-top"></div>
-                <div class="arrow-bottom"></div>
+              <div class="tab">
+                <input claas="inputPerguntas" type="checkbox" id="chck2">
+                <label class="tab-label" for="chck2">Quando ocorrerá o próximo Coffee Tour/intercâmbio para produtores
+                  de café?</label>
+                <div class="tab-content">
+                  O próximo Coffee Tour/intercâmbio para produtores de café geralmente ocorre durante a época de
+                  colheita do país visitado, levando em consideração a disponibilidade de datas e custos envolvidos.
+                </div>
               </div>
-            </div>
-            <div class="accordion-content" id="panel2a-content">
-              O próximo Coffee Tour/intercâmbio para produtores de café geralmente ocorre durante a época de colheita do
-              país
-              visitado, levando em consideração a disponibilidade de datas e custos envolvidos.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header" id="panel3a-header">
-              Quais são as principais etapas para produzir cafés de qualidade?
-              <div class="arrow">
-                <div class="arrow-top"></div>
-                <div class="arrow-bottom"></div>
+              <div class="tab">
+                <input claas="inputPerguntas" type="checkbox" id="chck3">
+                <label class="tab-label" for="chck3">Quais são as principais etapas para produzir cafés de
+                  qualidade?</label>
+                <div class="tab-content">
+                  A produção de cafés de qualidade envolve diversas etapas, sendo o pós-colheita uma das mais
+                  importantes.
+                  <br>É fundamental
+                  colher apenas os frutos maduros, realizar uma secagem adequada dos grãos, respeitando o período de
+                  descanso e umidade, e
+                  armazenar o café em local apropriado, sem contato com outros produtos que possam contaminá-lo.
+                  Seguindo
+                  essas etapas, é
+                  possível produzir cafés de alta qualidade.
+                </div>
               </div>
-            </div>
-            <div class="accordion-content" id="panel3a-content">
-              A produção de cafés de qualidade envolve diversas etapas, sendo o pós-colheita uma das mais importantes.
-              <br><br>É fundamental
-              colher apenas os frutos maduros, realizar uma secagem adequada dos grãos, respeitando o período de
-              descanso e umidade, e
-              armazenar o café em local apropriado, sem contato com outros produtos que possam contaminá-lo. Seguindo
-              essas etapas, é
-              possível produzir cafés de alta qualidade.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header" id="panel4a-header">
-              O que é corretagem de café e qual é o papel do corretor de café?
-              <div class="arrow">
-                <div class="arrow-top"></div>
-                <div class="arrow-bottom"></div>
+              <div class="tab">
+                <input claas="inputPerguntas" type="checkbox" id="chck4">
+                <label class="tab-label" for="chck4">O que é corretagem de café e qual é o papel do corretor de
+                  café?</label>
+                <div class="tab-content">
+                  A corretagem de café é uma atividade que envolve a intermediação entre produtores, compradores,
+                  exportadores
+                  e
+                  torradores de
+                  café. <br>O corretor de café atua como um consultor para o produtor e o comprador, trazendo
+                  diversos
+                  lotes para o exportador
+                  e o torrador. <br>No Brasil, que é o maior produtor e exportador de café do mundo e o segundo
+                  maior
+                  consumidor, o papel do
+                  corretor de café é fundamental para garantir a qualidade e a transparência nas negociações.
+                </div>
               </div>
-            </div>
-            <div class="accordion-content" id="panel4a-content">
-              A corretagem de café é uma atividade envolve a intermediação entre produtores, compradores, exportadores e
-              torradores de
-              café. <br><br>O corretor de café atua como um consultor para o produtor e o comprador, trazendo diversos
-              lotes para o exportador
-              e o torrador. <br><br>No Brasil, que é o maior produtor e exportador de café do mundo e o segundo maior
-              consumidor, o papel do
-              corretor de café é fundamental para garantir a qualidade e a transparência nas negociações.
             </div>
           </div>
         </div>
@@ -366,7 +356,7 @@
               </div>
             </li>• <li>
               <div class="link">
-                <p class="hover-text"> <a href="html/sobreNos.html">Sobre Nós</a> </p>
+                <p class="hover-text"> <a href="php/historia.php">Sobre Nós</a> </p>
                 <div class="hover-underline"></div>
               </div>
             </li>• <li>

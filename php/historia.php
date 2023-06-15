@@ -15,30 +15,7 @@
   </head>
 
   <body>
-    <!-- SECTION - HEADER -->
-    <header class="pagina">
-      <nav>
-        <a class="logo" href="/"><img id="logoNav" src="../images/icons/iconeLogo.svg" alt="logo da empresa">
-          NOVO TEMPO CAFÉ
-        </a>
-        <div id="paginas">
-          <div class="link">
-            <a href="../index.html" class="hover-text" >Início</a>
-    <div class="hover-underline"></div>
-          </div>
-          <div class="link">
-            <a href="#" class="hover-text" id="inicio">História</a>
-            <div class="hover-underline"></div>
-          </div>
-          <div class="link">
-            <a href="contato.html" class="hover-text">Contato</a>
-            <div class="hover-underline"></div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- !SECTION - HEADER -->
-
+    <?php include 'header1.php'; ?>
     <main> <!-- SECTION - Pagina -->
       <section id="section1"> <!-- SECTION - CARROSSEL -->
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -101,11 +78,11 @@
           <div class="card-body">
             <span
               class="badge d-flex align-items-center justify-content-center text-light-emphasis bg-dark-subtle border border-dark-subtle rounded-pill">
-              <!-- STUB - <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2019
+              <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2013
             </span>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p> -->
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#2013" class="btn btn-primary">Linha do tempo</a>
           </div>
         </div>
 
@@ -114,11 +91,11 @@
           <div class="card-body">
             <span
               class="badge d-flex align-items-center justify-content-center text-light-emphasis bg-dark-subtle border border-dark-subtle rounded-pill">
-              <!-- STUB - <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2019
+              <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2017
             </span>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p> -->
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#2017" class="btn btn-primary">Linha do tempo</a>
           </div>
         </div>
 
@@ -127,11 +104,11 @@
           <div class="card-body">
             <span
               class="badge d-flex align-items-center justify-content-center text-light-emphasis bg-dark-subtle border border-dark-subtle rounded-pill">
-              <!-- STUB - <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2019
+              <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2018
             </span>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p> -->
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#2018" class="btn btn-primary">Linha do tempo</a>
           </div>
         </div>
 
@@ -140,11 +117,11 @@
           <div class="card-body">
             <span
               class="badge d-flex align-items-center justify-content-center text-light-emphasis bg-dark-subtle border border-dark-subtle rounded-pill">
-              <!-- STUB - <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2019
+              <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2019
             </span>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p> -->
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#2019" class="btn btn-primary">Linha do tempo</a>
           </div>
         </div>
 
@@ -153,11 +130,11 @@
           <div class="card-body">
             <span
               class="badge d-flex align-items-center justify-content-center text-light-emphasis bg-dark-subtle border border-dark-subtle rounded-pill">
-              <!-- STUB - <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2019
+              <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2020
             </span>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p> -->
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#2020" class="btn btn-primary">Linha do tempo</a>
           </div>
         </div>
 
@@ -167,11 +144,11 @@
           <div class="card-body">
             <span
               class="badge d-flex align-items-center justify-content-center text-light-emphasis bg-dark-subtle border border-dark-subtle rounded-pill">
-              <!-- STUB - <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2019
+              <img class="me-2" width="18" height="18" src="/images/icons/calendarBoostrap.svg" alt="">2021
             </span>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p> -->
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#2021" class="btn btn-primary">Linha do tempo</a>
           </div>
         </div>
 
@@ -184,9 +161,15 @@
               <div class="d-flex p-5 justify-content-center">
                 <img src="../images/imagesHistorias/tempo1.svg" alt="...">
               </div>
-              <h1 class="text-body-emphasis">O COMEÇO DA NOSSA HISTÓRIA</h1>
+              <h1>O COMEÇO DA NOSSA HISTÓRIA</h1>
               <p class="col-lg-8 mx-auto lead">
-                Começamos em 2013 e é isso ai e colcoar mais texto sobre isso ai no inicio, alguma ideia ou inspiração ou alguma outra coisa
+                Começamos de maneira humilde, com foco e determinação, em 2013. Desde então, nossa corretora de café tem
+                crescido
+                constantemente, construindo relações sólidas e buscando a excelência em todas as etapas da cadeia de
+                suprimentos. Com um
+                compromisso inabalável com a qualidade e a inovação, estamos orgulhosos de ter nos estabelecido como uma
+                referência
+                respeitada no setor do café.
               </p>
             </div>
           </div>
@@ -194,7 +177,7 @@
       </section> <!-- SECTION - INICIO DA LINHA DO TEMPO -->
 
       <section id="section4" class="py-5"><!-- SECTION - LINHA DO TEMPO -->
-        <hr>
+        <hr id="2013">
         <div class="esquerda p-4">
           <div class="col-md-7 p-5 d-flex flex-column">
             <h2 class="featurette-heading fw-normal lh-1">• 2013</h2> <!-- NOTE - Parte 1 -->
@@ -212,7 +195,7 @@
           </figure>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="2017">
         <div class="direita p-4">
           <div class="col-md-7 p-5 d-flex flex-column align-items-lg-end">
             <h2 class="featurette-heading fw-normal lh-1">2017 •</h2> <!-- NOTE - Parte 2 -->
@@ -249,7 +232,7 @@
           </figure>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="2018">
         <div class="esquerda p-4">
           <div class="col-md-7 p-5 d-flex flex-column">
             <h2 class="featurette-heading fw-normal lh-1">• 2018</h2> <!-- NOTE - Parte 3 -->
@@ -259,7 +242,7 @@
             <div id="carouselExampleAutoplaying3" class="carousel slide carousel-fade" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active carroselSection3">
-                  <img src="../images/imagesHistorias/tempo1.svg" class="d-block w-100" alt="...">
+                  <img src="../images/imagesHistorias/2018.svg" class="d-block w-100" alt="...">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying3"
@@ -277,7 +260,7 @@
           </figure>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="2019">
         <div class="direita p-4">
           <div class="col-md-7 p-5 d-flex flex-column align-items-lg-end">
             <h2 class="featurette-heading fw-normal lh-1">2019 •</h2> <!-- NOTE - Parte 4 -->
@@ -287,7 +270,7 @@
             <div id="carouselExampleAutoplaying4" class="carousel slide carousel-fade" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active carroselSection3">
-                  <img src="../images/imagesHistorias/tempo1.svg" class="d-block w-100" alt="...">
+                  <img src="../images/imagesHistorias/2019.svg" class="d-block w-100" alt="...">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying4"
@@ -305,7 +288,7 @@
           </figure>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="2020">
         <div class="esquerda p-4">
           <div class="col-md-7 p-5 d-flex flex-column">
             <h2 class="featurette-heading fw-normal lh-1">• 2020</h2> <!-- NOTE - Parte 5 -->
@@ -315,7 +298,7 @@
             <div id="carouselExampleAutoplaying5" class="carousel slide carousel-fade" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active carroselSection3">
-                  <img src="../images/imagesHistorias/tempo1.svg" class="d-block w-100" alt="...">
+                  <img src="../images/imagesHistorias/2020.svg" class="d-block w-100" alt="...">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying5"
@@ -333,7 +316,7 @@
           </figure>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="2021">
         <div class="direita p-4">
           <div class="col-md-7 p-5 d-flex flex-column align-items-lg-end">
             <h2 class="featurette-heading fw-normal lh-1">2021 •</h2> <!-- NOTE - Parte 6 -->
@@ -343,7 +326,7 @@
             <div id="carouselExampleAutoplaying6" class="carousel slide carousel-fade" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active carroselSection3">
-                  <img src="../images/imagesHistorias/tempo1.svg" class="d-block w-100" alt="...">
+                  <img src="../images/imagesHistorias/2021.svg" class="d-block w-100" alt="...">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying6"
@@ -361,7 +344,7 @@
           </figure>
         </div>
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" id="2022">
         <div class="esquerda p-4">
           <div class="col-md-7 p-5 d-flex flex-column">
             <h2 class="featurette-heading fw-normal lh-1">• 2022</h2> <!-- NOTE - Parte 7 -->
@@ -371,7 +354,7 @@
             <div id="carouselExampleAutoplaying7" class="carousel slide carousel-fade" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active carroselSection3">
-                  <img src="../images/imagesHistorias/tempo1.svg" class="d-block w-100" alt="...">
+                  <img src="../images/imagesHistorias/2022.svg" class="d-block w-100" alt="...">
                 </div>
 
               </div>
@@ -400,7 +383,7 @@
             <div id="carouselExampleAutoplaying8" class="carousel slide carousel-fade" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active carroselSection3">
-                  <img src="../images/imagesHistorias/tempo1.svg" class="d-block w-100" alt="...">
+                  <img src="../images/imagesHistorias/2023.svg" class="d-block w-100" alt="...">
                 </div>
 
               </div>
@@ -420,111 +403,23 @@
         </div>
 
         <div id="jumbotron">
-            <svg width="48" height="48">
-              <use xlink:href="#check2-circle"></use>
-            </svg>
-            <!-- STUB - <h1>Placeholder jumbotron</h1> -->
-            <p>
-              Obrigado pela atenção<br> essa foi uma pequena parte da nossa historia completa, datar ela toda, levaria muito tempo e
-              esse não é nosso objetivo e sim fazer você fazer parte dela
-            </p>
-            <button class="btn btn-primary px-5 mb-5" type="button">
+          <svg width="48" height="48">
+            <use xlink:href="#check2-circle"></use>
+          </svg>
+          <!-- STUB - <h1>Placeholder jumbotron</h1> -->
+          <h1>Obrigado pela atenção</h1>
+          <p>
+            Essa foi apenas uma pequena parte da nossa história completa.<br> Datá-la por completo levaria muito tempo,
+            mas nosso objetivo é fazer com que você faça parte dela
+          </p>
+          <a href="contato.html"><button class="btn btn-primary px-5 mb-5" type="button">
               Entre em contato conosco
-            </button>
+            </button></a>
         </div>
       </section><!-- !SECTION - LINHA DO TEMPO -->
     </main> <!-- !SECTION - Pagina -->
 
-    <footer> <!-- SECTION - Rodapé da pagina-->
-      <div id="conteudoFooter">
-        <div id="div1">
-          <img src="../images/imagensIndex/logoNovoTempoCafe.svg">
-          <ul>
-            <li>
-              <div class="link">
-                <p class="hover-text">
-                  <a href="../index.html">Inicio</a>
-                </p>
-                <div class="hover-underline"></div>
-              </div>
-            </li>•
-            <li>
-              <div class="link">
-                <p class="hover-text">
-                  <a href="#header">História</a>
-                </p>
-                <div class="hover-underline"></div>
-              </div>
-            </li>•
-            <li>
-              <div class="link">
-                <p class="hover-text">
-                  <a href="contato.html">Contato</a>
-                </p>
-                <div class="hover-underline"></div>
-              </div>
-            </li>
-          </ul>
-          <p id="nomeEmpresaFooter">Novo Tempo Café © 2013</p>
-        </div>
-        <div id="div2">
-          <div class="subDiv2">
-            <img src="../images/icons/map.svg" alt="icons">
-            <div class="link">
-              <p class="hover-text"><a
-                  href="https://www.google.com/maps/dir//NOVO+TEMPO+CAF%C3%89+LTDA+-+Av.+Felipe+Nacif,+34+-+2%C2%B0+Andar,+Sl+101+-+Baixada,+Manhua%C3%A7u+-+MG,+36902-057/@-20.2470207,-42.030716,19.08z/data=!4m17!1m7!3m6!1s0xbafd94d9cba065:0x33a09c429ac198e9!2sNOVO+TEMPO+CAF%C3%89+LTDA!8m2!3d-20.2469002!4d-42.0305137!16s%2Fg%2F11kbm16n6r!4m8!1m0!1m5!1m1!1s0xbafd94d9cba065:0x33a09c429ac198e9!2m2!1d-42.0305137!2d-20.2469002!3e1?hl=pt-BR&entry=ttu"
-                  target="_blank" rel="noreferrer">Av. Felipe Nacif, 34 - 2° Andar<br>Manhuaçu, Minas Gerais, Brasil</a>
-              <div class="hover-underline"></div>
-              </p>
-            </div>
-          </div>
-          <div class="subDiv2">
-            <img src="../images/icons/call.svg" alt="icons">
-            <div class="link">
-              <p class="hover-text">
-                <a href="tel:553333314530">+55 (33) 3331-4530</a>
-              <div class="hover-underline"></div>
-              </p>
-            </div>
-          </div>
-          <div class="subDiv2">
-            <img src="../images/icons/email.svg" alt="ícone de e-mail">
-            <div class="link">
-              <p class="hover-text"><a href="https://mail.google.com/mail/u/0/?view=cm&to=novotempocafe@hotmail.com"
-                  target="_blank">novotempocafe@hotmail.com</a></p>
-              <div class="hover-underline"></div>
-            </div>
-          </div>
-        </div>
-        <div id="div3">
-          <div id="subDiv3">
-            <p id="p1">Sobre a empresa</p>
-            <p id="p2">Novo Tempo Café é uma empresa que atua no ramo de cafés especiais, oferecendo cursos,
-              consultorias e
-              corretagem de café.</p>
-          </div>
-          <div id="sub2Div3">
-            <a href="https://www.instagram.com/novotempocafe/" target="_blank" rel="noreferrer">
-              <img id="insta" src="../images/icons/instagram.svg" alt="Icon Instagram">
-            </a>
-            <div class="link">
-              <p class="hover-text"><a href="https://www.instagram.com/novotempocafe/" target="_blank"
-                  rel="noreferrer">@novotempocafe</a></p>
-              <div class="hover-underline"></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div id="desenvolvedor">
-        <p>Feito por</p>
-        <div class="link">
-          <p class="hover-text"><a href="https://github.com/Venidici-Org" target="_blank" rel="noreferrer"><img
-                src="../images/icons/venidiciIcon.svg"></a></p>
-          <div class="hover-underline"></div>
-        </div>
-      </div>
-    </footer>
+    <?php include 'footer.php'; ?>
   </body>
   <script> // ANCHOR - Bloquear botão direito do mouse
     var message = "";

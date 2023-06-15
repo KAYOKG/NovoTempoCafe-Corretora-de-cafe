@@ -101,13 +101,12 @@ section{
   height: 100%;
   width: 100%;
   align-items: center;
-  /* gap: 2vw; */
-  justify-content: space-between;
+  gap: 2vw;
+  justify-content: center;
 }
 
 #form{
   height: 70%!important;
-  width: 48%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,6 +115,7 @@ section{
 #form *{
   padding: 0;
 }
+
 
 #jumbotron{
   height: 40vh!important;
@@ -126,7 +126,7 @@ section{
 #metContato, #checkForm, #subM{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
   align-items: flex-start;
 }
 
