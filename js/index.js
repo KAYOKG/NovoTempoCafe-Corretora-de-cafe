@@ -43,7 +43,7 @@ const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 200
 });
 
-// ANCHOR - Função para bloquear o usuario de inspecionar a pagina
+// ANCHOR - Função para bloquear o usuario para inspecionar a pagina
 var message = "";
 function clickIE() { if (document.all) { (message); return false; } }
 function clickNS(e) {
