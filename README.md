@@ -3,14 +3,9 @@
 # SITE HOSPEDADO [AQUI](https://kayokg.github.io/NovoTempoCafe-Corretora-de-cafe/)
 
 ## Locais no site para melhorias futuras
-
-- Colocar a tela de carregamento com o tempo da animação completa
-
-- Colocar a tela de carregamento assim que carregado, ela desaparecendo e ao mesmo tempo aparecendo o site
+- Colocar a tela de carregamento assim que carregado, ela desaparecendo e ao mesmo tempo aparecendo o site(fade in)
 
 - Colocar uma extensão/API da bolsa de valores
-
-- Colocar todos os elementos depois da imagem inicial para aparecerem com efeito de [fade in](https://solarsky.studio.site/)
 
 - Colocar o footer nesse [estilo](https://mrpops.ua/en/)
 
@@ -18,32 +13,7 @@
 
 - Repensar sobre o carrosel de imagens da pagina
 
-- Colocar efeito de fade in das informações saindo de trás da foto dos CEOs
-
 - Colocar informações da empresa no lado esquerdo e uma foto dos funcionários no lado direito na proporção respectivamente 1x2
 
 - index com efeito fade in
-
-<!-- ANCHOR - Pedido dela no trabalho -->
-*NOTE - pagina (contato) com formulario com os itens input(text, checkbox, (radio(telefone ou email))
-
-- pagina (contato) com javascript
-  *NOTE -ter a verficação em tempo real se os dados estão certos para liberar o botão de enviar
-  *NOTE - Indicar o erro em tempo real se a verificação estiver errada(span)
-  *NOTE - tratar injeção de codigo SQL
-  *STUB Apos confirmar o envio(tratar os dados contra XSS), enviar as informações para o banco de dados e caso não seja enviada irá aparecer a mensagem(erro de conexão, envie novamente), de preferencia quando aparecer a mensagem na tela, ela aparecer fazendo um efeito ou animação
-  *STUB Depois de confirmado a tela, aparecerá um pop-up no meio da tela com as informações enviadas(php) e botão de visualizar o banco de dados
-  *STUB O botão de visualizar o banco de dados irá levar a pagina de visualização do banco de dados(header e footer em php)
- *STUB - Falta a validaÇão certa do email, está aceitando sem o ponto
-
-- Usar boostrap em alguma das duas paginas
-  *NOTE -  Jumbotron(TELA CONTATO)
-  *NOTE - Carrossel (1 carrossel com pelo menos 3 slides diferentes)(TELA HISTORIA)
-  *NOTE - Icones(TELA HISTORIA)
-  *NOTE - Cards(TELA HISTORIA)
-  *NOTE - Badge - Utilize JavaScript ou jQuery para atualizar o valor de acordo com o significado da badge escolhida por voce(TELA HISTORIA)
-  *STUB Breadcrumbs(TELA BANCO DE DAODS)
-
 *STUB responsavidade em todas as paginas
-
-*STUB estilização das paginas
