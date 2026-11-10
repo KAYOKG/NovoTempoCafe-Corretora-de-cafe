@@ -1,76 +1,86 @@
-//ANCHOR - Função do carrossel de imagens
-var images = [
-  "foto1.svg", "foto2.svg", "foto3.svg", "foto4.svg",
-  "foto5.svg", "foto6.svg", "foto7.svg", "foto8.svg",
-  "foto9.svg", "foto10.svg", "foto11.svg", "foto12.svg",
-  "foto13.svg", "foto14.svg", "foto15.svg", "foto16.svg",
-  "foto17.svg", "foto18.svg", "foto19.svg", "foto20.svg",
-  "foto21.svg", "foto22.svg", "foto23.svg", "foto24.svg",
-  "foto25.svg", "foto26.svg", "foto27.svg", "foto28.svg",
-  "foto29.svg", "foto30.svg", "foto31.svg", "foto32.svg",
-  "foto33.svg", "foto34.svg", "foto35.svg", "foto36.svg",
-  "foto37.svg", "foto38.svg", "foto39.svg"
+// A galeria começa ao entrar na tela e prepara somente a próxima foto.
+const imagens = document.querySelectorAll(".grid-item .imagens");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const descriptions = [
+  "Material do curso de exportação da Novo Tempo Café",
+  "Três participantes reunidos em um ambiente de trabalho",
+  "Participantes em um estande de feira de café",
+  "Grupo reunido ao ar livre em uma propriedade rural",
+  "Utensílios para preparo de café em exposição",
+  "Xícara de café com a marca Novo Tempo Café",
+  "Frutos de café espalhados em um terreiro coberto",
+  "Frutos de café vermelhos e verdes após a colheita",
+  "Xícara da Novo Tempo Café ao lado de um livro aberto",
+  "Participantes assistindo a uma apresentação em sala de aula",
+  "Grupo reunido com a bandeira do Brasil em uma visita",
+  "Dois participantes ao lado de uma lavoura de café",
+  "Participantes na entrada da feira em Manizales",
+  "Dois participantes apresentando pacotes de café",
+  "Participantes em uma feira de café",
+  "Grupo de visitantes reunido em uma feira",
+  "Produtor segurando uma peneira com frutos de café",
+  "Visita a um terreiro de secagem de café",
+  "Dois participantes em um espaço dedicado a cafés especiais",
+  "Dois participantes diante da bandeira do Brasil",
+  "Três participantes reunidos em uma feira",
+  "Dois visitantes em uma lavoura de café",
+  "Grupo de participantes dentro de um ônibus",
+  "Grupo de produtores em visita a Manizales, Caldas",
+  "Participante diante do Expominas na Semana Internacional do Café",
+  "Visitante na entrada do Expominas",
+  "Três participantes reunidos em um evento de café",
+  "Grupo reunido com uma xícara de café",
+  "Três participantes com credenciais de um evento",
+  "Grupo reunido em um estande de feira",
+  "Grupo com a bandeira do Brasil em uma visita técnica",
+  "Boné com a marca Novo Tempo Café",
+  "Grupo reunido em uma cafeteria",
+  "Dois participantes diante do Expominas",
+  "Grupo com a bandeira do Brasil ao ar livre",
+  "Dois participantes na Semana Internacional do Café",
+  "Dois participantes reunidos em um evento",
+  "Três participantes em um estande de feira",
+  "Grupo com a bandeira do Brasil em uma feira de café"
 ];
-var currentIndex = 0;
-var imageChangeInterval = 2000;
-var imagens = document.querySelectorAll(".grid-item .imagens");
+let currentIndex = 0;
+let slot = 0;
+let nextImage;
+let ready = false;
 
-function updateImage(index) {
-  currentIndex = (currentIndex + 1) % images.length;
-  var nextImage = "images/imagensIndex/instagramPosts/" + images[currentIndex];
-  imagens[index].src = nextImage;
+function preloadNext() {
+  ready = false;
+  nextImage = new Image();
+  nextImage.onload = () => { ready = true; };
+  nextImage.onerror = () => {
+    currentIndex = (currentIndex + 1) % descriptions.length;
+    nextImage = null;
+  };
+  nextImage.src = `images/imagensIndex/instagramPosts/foto${currentIndex + 1}.webp`;
 }
 
-function startSlideshow(index) {
-  if (index >= imagens.length) {
-    index = 0;
+function tick() {
+  if (reducedMotion.matches) return;
+  if (!document.hidden) {
+    if (ready) {
+      imagens[slot].src = nextImage.src;
+      imagens[slot].alt = descriptions[currentIndex];
+      slot = (slot + 1) % imagens.length;
+      currentIndex = (currentIndex + 1) % descriptions.length;
+      preloadNext();
+    } else if (!nextImage) {
+      preloadNext();
+    }
   }
-  updateImage(index);
-  setTimeout(function () {
-    startSlideshow(index + 1);
-  }, imageChangeInterval);
+  setTimeout(tick, 2000);
 }
 
-function stopSlideshow() {
-  clearTimeout(timeoutId);
+if (imagens.length && !reducedMotion.matches) {
+  const observer = new IntersectionObserver((entries) => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      observer.disconnect();
+      preloadNext();
+      setTimeout(tick, 2000);
+    }
+  });
+  observer.observe(imagens[0]);
 }
-
-startSlideshow(0);
-
-
-// ANCHOR - Biblioteca de suavização do Scroll (smooth-scroll@16.1.3)
-const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 200
-});
-
-// ANCHOR - Função para bloquear o usuario para inspecionar a pagina
-var message = "";
-function clickIE() { if (document.all) { (message); return false; } }
-function clickNS(e) {
-  if
-    (document.layers || (document.getElementById && !document.all)) {
-    if (e.which == 2 || e.which == 3) { (message); return false; }
-  }
-}
-if (document.layers) { document.captureEvents(Event.MOUSEDOWN); document.onmousedown = clickNS; }
-else { document.onmouseup = clickNS; document.oncontextmenu = clickIE; }
-
-document.oncontextmenu = new Function("return false")
-
-// NOTE - F12
-document.onkeypress = function (event) {
-  if (e.ctrlKey &&
-    (e.keyCode === 123)) {
-    // alert('not allowed');
-    return false;
-  }
-};
-
-// NOTE - CTRL + u
-document.onkeydown = function (e) {
-  if (e.ctrlKey &&
-    (e.keyCode === 85)) {
-    // alert('not allowed');
-    return false;
-  }
-};

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kayokg.github.io/NovoTempoCafe-Corretora-de-cafe/sitemap.xml
